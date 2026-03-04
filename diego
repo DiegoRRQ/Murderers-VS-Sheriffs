@@ -1,12 +1,1054 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+-- Diego // Murderers VS Sheriffs
 
-]]--
+local xsOmjCpRghFJiiZdAXG = (function()
+    return function(tbl, key)
+        local out = {}
+        for i = 1, #tbl do
+            out[i] = string.char(bit32.bxor(tbl[i], key))
+        end
+        return table.concat(out)
+    end
+end)()
 
-local v0=game:GetService("Players");local v1=game:GetService("RunService");local v2=game:GetService("UserInputService");local v3=game:GetService("TweenService");local v4=game:GetService("CoreGui");local v5=workspace.CurrentCamera;local v6=v0.LocalPlayer;local v7=v6:GetMouse();local v8={TeamCheck=true,ArmedCheck=false,AutoShoot=false,Hitbox=false,HitboxSize=284 -(92 + 187) ,ESP=false,Tracers=false,Fly=false,FlySpeed=1130 -(1020 + 60) ,Noclip=false};local v9={Background=Color3.fromRGB(1433 -(630 + 793) ,33 -23 ,66 -52 ),Surface=Color3.fromRGB(7 + 9 ,16,75 -53 ),SurfaceHover=Color3.fromRGB(1769 -(760 + 987) ,1935 -(1789 + 124) ,798 -(745 + 21) ),Border=Color3.fromRGB(14 + 26 ,110 -70 ,58),Accent=Color3.fromRGB(99,102,945 -704 ),AccentBright=Color3.fromRGB(2 + 137 ,73 + 19 ,1301 -(87 + 968) ),AccentGlow=Color3.fromRGB(294 -227 ,51 + 5 ,202),Danger=Color3.fromRGB(239,68,153 -85 ),Success=Color3.fromRGB(1447 -(447 + 966) ,539 -342 ,94),TextPrimary=Color3.fromRGB(248,248,2072 -(1703 + 114) ),TextSecondary=Color3.fromRGB(148,148,180),TextMuted=Color3.fromRGB(781 -(376 + 325) ,131 -51 ,338 -228 ),SliderFill=Color3.fromRGB(29 + 70 ,224 -122 ,241),ToggleOff=Color3.fromRGB(59 -(9 + 5) ,421 -(85 + 291) ,1325 -(243 + 1022) )};local function v10(v168,v169,v170,v171,v172) local v173=TweenInfo.new(v170 or 0.18 ,v171 or Enum.EasingStyle.Quart ,v172 or Enum.EasingDirection.Out );v3:Create(v168,v173,v169):Play();end if v4:FindFirstChild("DiegoHub") then v4.DiegoHub:Destroy();end local v11=Instance.new("ScreenGui");v11.Name="bn375v2b57ne18";v11.ResetOnSpawn=false;pcall(function() v11.Parent=v4;end);if (v11.Parent~=v4) then v11.Parent=v6:WaitForChild("PlayerGui");end local function v14(v175,v176) local v177,v178,v179,v180=false,nil,nil,nil;v175.InputBegan:Connect(function(v306) if ((v306.UserInputType==Enum.UserInputType.MouseButton1) or (v306.UserInputType==Enum.UserInputType.Touch)) then v177=true;v179=v306.Position;v180=v176.Position;v306.Changed:Connect(function() if (v306.UserInputState==Enum.UserInputState.End) then v177=false;end end);end end);v175.InputChanged:Connect(function(v307) if ((v307.UserInputType==Enum.UserInputType.MouseMovement) or (v307.UserInputType==Enum.UserInputType.Touch)) then v178=v307;end end);v2.InputChanged:Connect(function(v308) if ((v308==v178) and v177) then local v351=0 -0 ;local v352;while true do if (v351==0) then v352=v308.Position-v179 ;v176.Position=UDim2.new(v180.X.Scale,v180.X.Offset + v352.X ,v180.Y.Scale,v180.Y.Offset + v352.Y );break;end end end end);end local v15=Instance.new("TextButton");v15.Name="DiegoToggle";v15.Parent=v11;v15.Size=UDim2.new(0 + 0 ,1232 -(1123 + 57) ,0,43 + 9 );v15.Position=UDim2.new(254 -(163 + 91) ,14,1930 -(1869 + 61) ,4 + 10 );v15.BackgroundColor3=v9.Accent;v15.BorderSizePixel=0;v15.Font=Enum.Font.GothamBold;v15.Text="D";v15.TextColor3=v9.TextPrimary;v15.TextSize=77 -55 ;v15.ZIndex=10;Instance.new("UICorner",v15).CornerRadius=UDim.new(0 -0 ,2 + 8 );v15.BackgroundColor3=v9.Surface;v15.TextColor3=v9.Accent;v15.TextSize=24 -6 ;local v32=Instance.new("UIStroke",v15);v32.Color=v9.Border;v32.Thickness=1 + 0 ;v15.MouseEnter:Connect(function() local v181=0;while true do if (v181==(1474 -(1329 + 145))) then v10(v15,{BackgroundColor3=v9.SurfaceHover},971.12 -(140 + 831) );v10(v32,{Color=v9.Accent},0.12);break;end end end);v15.MouseLeave:Connect(function() local v182=1850 -(1409 + 441) ;while true do if (v182==(718 -(15 + 703))) then v10(v15,{BackgroundColor3=v9.Surface},0.12);v10(v32,{Color=v9.Border},0.12 + 0 );break;end end end);v14(v15,v15);local v36=Instance.new("Frame");v36.Name="e7645nx8t541nb28";v36.Parent=v11;v36.BackgroundColor3=v9.Background;v36.Position=UDim2.new(0.5, -(623 -(262 + 176)),0.5, -(1981 -(345 + 1376)));v36.Size=UDim2.new(688 -(198 + 490) ,1634 -1264 ,0,1247 -727 );v36.BorderSizePixel=1206 -(696 + 510) ;v36.ClipsDescendants=true;Instance.new("UICorner",v36).CornerRadius=UDim.new(0 -0 ,1276 -(1091 + 171) );local v46=Instance.new("UIStroke",v36);v46.Color=v9.Border;v46.Thickness=1 + 0 ;v46.Transparency=0 -0 ;local v50=Instance.new("UIGradient",v36);v50.Color=ColorSequence.new({ColorSequenceKeypoint.new(374 -(123 + 251) ,Color3.fromRGB(13,13,99 -79 )),ColorSequenceKeypoint.new(1 + 0 ,Color3.fromRGB(4 + 4 ,844 -(660 + 176) ,2 + 10 ))});v50.Rotation=337 -(14 + 188) ;local v53=Instance.new("Frame");v53.Parent=v36;v53.BackgroundColor3=v9.Surface;v53.Size=UDim2.new(676 -(534 + 141) ,0 + 0 ,0 + 0 ,54 + 2 );v53.BorderSizePixel=0 -0 ;Instance.new("UICorner",v53).CornerRadius=UDim.new(0,14);local v59=Instance.new("Frame");v59.Parent=v53;v59.BackgroundColor3=v9.Surface;v59.Size=UDim2.new(1 -0 ,0 -0 ,0.5 + 0 ,0 + 0 );v59.Position=UDim2.new(0,396 -(115 + 281) ,0.5 -0 ,0 + 0 );v59.BorderSizePixel=0 -0 ;local v65=Instance.new("Frame");v65.Parent=v53;v65.BackgroundColor3=v9.Border;v65.Size=UDim2.new(3 -2 ,867 -(550 + 317) ,0 -0 ,1 -0 );v65.Position=UDim2.new(0 -0 ,0,1, -(286 -(134 + 151)));v65.BorderSizePixel=1665 -(970 + 695) ;local v71=Instance.new("Frame");v71.Parent=v53;v71.BackgroundColor3=v9.Accent;v71.Size=UDim2.new(0 -0 ,1993 -(582 + 1408) ,0 -0 ,28);v71.Position=UDim2.new(0,19 -3 ,0.5 -0 , -(1838 -(1195 + 629)));v71.BorderSizePixel=0 -0 ;Instance.new("UICorner",v71).CornerRadius=UDim.new(1,0);local v78=Instance.new("UIGradient",v71);v78.Color=ColorSequence.new({ColorSequenceKeypoint.new(780 -(162 + 618) ,v9.AccentBright),ColorSequenceKeypoint.new(1 + 0 ,v9.Accent)});v78.Rotation=191 -101 ;local v81=Instance.new("TextLabel");v81.Parent=v53;v81.BackgroundTransparency=1 -0 ;v81.Position=UDim2.new(0 + 0 ,1666 -(1373 + 263) ,1000 -(451 + 549) ,3 + 4 );v81.Size=UDim2.new(0,280 -100 ,0 -0 ,1408 -(746 + 638) );v81.Font=Enum.Font.GothamBold;v81.Text="DIEGO";v81.TextColor3=v9.TextPrimary;v81.TextSize=7 + 11 ;v81.TextXAlignment=Enum.TextXAlignment.Left;local v92=Instance.new("TextLabel");v92.Parent=v53;v92.BackgroundTransparency=1 -0 ;v92.Position=UDim2.new(341 -(218 + 123) ,1611 -(1535 + 46) ,0,31);v92.Size=UDim2.new(0 + 0 ,27 + 153 ,560 -(306 + 254) ,14);v92.Font=Enum.Font.Gotham;v92.Text="Murderers VS Sheriffs";v92.TextColor3=v9.Accent;v92.TextSize=1 + 10 ;v92.TextXAlignment=Enum.TextXAlignment.Left;local v103=Instance.new("Frame");v103.Parent=v53;v103.BackgroundColor3=v9.AccentGlow;v103.Position=UDim2.new(1 -0 , -(1577 -(899 + 568)),0.5, -(7 + 3));v103.Size=UDim2.new(0,96 -56 ,603 -(268 + 335) ,310 -(60 + 230) );v103.BorderSizePixel=572 -(426 + 146) ;Instance.new("UICorner",v103).CornerRadius=UDim.new(1 + 0 ,1456 -(282 + 1174) );local v111=Instance.new("UIGradient",v103);v111.Color=ColorSequence.new({ColorSequenceKeypoint.new(811 -(569 + 242) ,v9.Accent),ColorSequenceKeypoint.new(2 -1 ,v9.AccentGlow)});v111.Rotation=6 + 84 ;local v114=Instance.new("TextLabel");v114.Parent=v103;v114.BackgroundTransparency=1025 -(706 + 318) ;v114.Size=UDim2.new(1,0,1252 -(721 + 530) ,0);v114.Font=Enum.Font.GothamBold;v114.Text="v1.0";v114.TextColor3=v9.TextPrimary;v114.TextSize=1281 -(945 + 326) ;local v122=Instance.new("TextButton");v122.Parent=v53;v122.BackgroundColor3=Color3.fromRGB(137 -82 ,49 + 6 ,775 -(271 + 429) );v122.BackgroundTransparency=0.2 + 0 ;v122.Position=UDim2.new(1501 -(1408 + 92) , -42,0.5, -11);v122.Size=UDim2.new(0,22,0,22);v122.Font=Enum.Font.GothamBold;v122.Text="−";v122.TextColor3=v9.TextSecondary;v122.TextSize=1100 -(461 + 625) ;v122.BorderSizePixel=0;Instance.new("UICorner",v122).CornerRadius=UDim.new(1289 -(993 + 295) ,0);v122.MouseEnter:Connect(function() v10(v122,{BackgroundTransparency=0,BackgroundColor3=v9.Accent,TextColor3=v9.TextPrimary},0.12);end);v122.MouseLeave:Connect(function() v10(v122,{BackgroundTransparency=0.2 + 0 ,BackgroundColor3=Color3.fromRGB(1226 -(418 + 753) ,21 + 34 ,75),TextColor3=v9.TextSecondary},0.12 + 0 );end);v122.MouseButton1Click:Connect(function() v36.Visible=false;end);v14(v53,v36);local function v135(v184,v185,v186) local v187=0;local v188;while true do if (v187==(2 + 2)) then v188.TextXAlignment=Enum.TextXAlignment.Left;v188.LayoutOrder=v186 or (0 + 0) ;break;end if (v187==(532 -(406 + 123))) then v188.TextColor3=v9.TextMuted;v188.TextSize=10;v187=1773 -(1749 + 20) ;end if (v187==(0 + 0)) then v188=Instance.new("TextLabel");v188.Parent=v184;v187=1323 -(1249 + 73) ;end if (2==v187) then v188.Font=Enum.Font.GothamBold;v188.Text=("  %s"):format(v185:upper());v187=2 + 1 ;end if (v187==1) then v188.BackgroundTransparency=1146 -(466 + 679) ;v188.Size=UDim2.new(2 -1 , -30,0,62 -40 );v187=1902 -(106 + 1794) ;end end end local v136=Instance.new("ScrollingFrame");v136.Parent=v36;v136.Active=true;v136.BackgroundTransparency=1;v136.Position=UDim2.new(0 + 0 ,0,0 + 0 ,56);v136.Size=UDim2.new(1,0,2 -1 , -(151 -95));v136.ScrollBarThickness=2;v136.ScrollBarImageColor3=v9.Accent;v136.BorderSizePixel=114 -(4 + 110) ;v136.CanvasSize=UDim2.new(0,584 -(57 + 527) ,0,0);local v146=Instance.new("UIListLayout");v146.Parent=v136;v146.SortOrder=Enum.SortOrder.LayoutOrder;v146.Padding=UDim.new(1427 -(41 + 1386) ,108 -(17 + 86) );v146.HorizontalAlignment=Enum.HorizontalAlignment.Center;local v153=Instance.new("UIPadding");v153.Parent=v136;v153.PaddingTop=UDim.new(0 + 0 ,26 -14 );v153.PaddingBottom=UDim.new(0 -0 ,178 -(122 + 44) );v146:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() v136.CanvasSize=UDim2.new(0,0 -0 ,0 -0 ,v146.AbsoluteContentSize.Y + 20 + 4 );end);local v157=true;local function v158(v190) local v191=0 + 0 ;while true do if (v191==(0 -0)) then v157=v190;if v190 then local v478=65 -(30 + 35) ;while true do if (v478==(0 + 0)) then v36.Visible=true;v36.Size=UDim2.new(0,1257 -(1043 + 214) ,0 -0 ,0);v478=1213 -(323 + 889) ;end if (v478==1) then v36.Position=UDim2.new(v36.Position.X.Scale,v36.Position.X.Offset + (497 -312) ,v36.Position.Y.Scale,v36.Position.Y.Offset + 260 );v10(v36,{Size=UDim2.new(580 -(361 + 219) ,690 -(53 + 267) ,0 + 0 ,933 -(15 + 398) ),Position=UDim2.new(v36.Position.X.Scale,v36.Position.X.Offset-(1167 -(18 + 964)) ,v36.Position.Y.Scale,v36.Position.Y.Offset-(978 -718) )},0.28 + 0 ,Enum.EasingStyle.Back,Enum.EasingDirection.Out);break;end end else v10(v36,{Size=UDim2.new(0,0 + 0 ,0,0)},850.2 -(20 + 830) ,Enum.EasingStyle.Quart,Enum.EasingDirection.In);task.delay(0.21,function() v36.Visible=false;end);end break;end end end v15.MouseButton1Click:Connect(function() v158( not v157);end);v2.InputBegan:Connect(function(v192,v193) if ( not v193 and (v192.KeyCode==Enum.KeyCode.Insert)) then v158( not v157);end end);local v159=0 + 0 ;local function v160(v194,v195,v196,v197) v8[v195]=v196;v159=v159 + 1 ;local v199=Instance.new("Frame");v199.Parent=v136;v199.BackgroundColor3=v9.Surface;v199.Size=UDim2.new(1, -24,0,168 -(116 + 10) );v199.BorderSizePixel=0;v199.LayoutOrder=v159;local v206=Instance.new("UICorner",v199);v206.CornerRadius=UDim.new(0,10);local v208=Instance.new("UIStroke",v199);v208.Color=v9.Border;v208.Thickness=1;v208.Transparency=0.5 + 0 ;v199.MouseEnter:Connect(function() v10(v199,{BackgroundColor3=v9.SurfaceHover},738.12 -(542 + 196) );v10(v208,{Transparency=0 -0 },0.12 + 0 );end);v199.MouseLeave:Connect(function() v10(v199,{BackgroundColor3=v9.Surface},0.12 + 0 );v10(v208,{Transparency=0.5 + 0 },0.12 -0 );end);local v213=Instance.new("TextLabel");v213.Parent=v199;v213.BackgroundTransparency=1;v213.Position=UDim2.new(0 -0 ,1565 -(1126 + 425) ,0,0);v213.Size=UDim2.new(1, -(475 -(118 + 287)),3 -2 ,0);v213.Font=Enum.Font.Gotham;v213.Text=v194;v213.TextColor3=v9.TextSecondary;v213.TextSize=1134 -(118 + 1003) ;v213.TextXAlignment=Enum.TextXAlignment.Left;local v226=Instance.new("TextButton");v226.Parent=v199;v226.BackgroundColor3=(v196 and v9.Accent) or v9.ToggleOff ;v226.Position=UDim2.new(2 -1 , -(429 -(142 + 235)),0.5 -0 , -11);v226.Size=UDim2.new(0 + 0 ,1017 -(553 + 424) ,0,41 -19 );v226.Text="";v226.BorderSizePixel=0;Instance.new("UICorner",v226).CornerRadius=UDim.new(1,0 + 0 );local v234=Instance.new("Frame");v234.Parent=v226;v234.BackgroundColor3=Color3.fromRGB(253 + 2 ,255,149 + 106 );v234.Size=UDim2.new(0 + 0 ,10 + 6 ,0 -0 ,44 -28 );v234.Position=(v196 and UDim2.new(1, -19,0.5 -0 , -8)) or UDim2.new(0 + 0 ,14 -11 ,753.5 -(239 + 514) , -(3 + 5)) ;v234.BorderSizePixel=1329 -(797 + 532) ;Instance.new("UICorner",v234).CornerRadius=UDim.new(1 + 0 ,0);local v241=Instance.new("UIStroke",v234);v241.Color=Color3.fromRGB(0,0,0);v241.Transparency=0.7 + 0 ;v241.Thickness=2 -1 ;local v245=Instance.new("Frame");v245.Parent=v199;v245.BackgroundColor3=v9.Accent;v245.Size=UDim2.new(0,1205 -(373 + 829) ,731.5 -(476 + 255) ,0);v245.Position=UDim2.new(0,1130 -(369 + 761) ,0.25 + 0 ,0 -0 );v245.BorderSizePixel=0;v245.BackgroundTransparency=(v196 and 0) or 1 ;Instance.new("UICorner",v245).CornerRadius=UDim.new(1,0 -0 );local v254=v196;local function v255() v254= not v254;v8[v195]=v254;if v254 then local v365=238 -(64 + 174) ;while true do if ((1 + 0)==v365) then v10(v213,{TextColor3=v9.TextPrimary},0.18 -0 );v10(v245,{BackgroundTransparency=0},336.18 -(144 + 192) );break;end if (v365==(216 -(42 + 174))) then v10(v226,{BackgroundColor3=v9.Accent},0.18);v10(v234,{Position=UDim2.new(1, -(15 + 4),0.5, -(7 + 1))},0.18 + 0 ,Enum.EasingStyle.Back);v365=1505 -(363 + 1141) ;end end else local v366=1580 -(1183 + 397) ;while true do if (v366==0) then v10(v226,{BackgroundColor3=v9.ToggleOff},0.18 -0 );v10(v234,{Position=UDim2.new(0 + 0 ,3 + 0 ,1975.5 -(1913 + 62) , -(6 + 2))},0.18 -0 ,Enum.EasingStyle.Back);v366=1934 -(565 + 1368) ;end if (v366==1) then v10(v213,{TextColor3=v9.TextSecondary},0.18 -0 );v10(v245,{BackgroundTransparency=1},1661.18 -(1477 + 184) );break;end end end if v197 then v197(v254);end end v226.MouseButton1Click:Connect(v255);if v196 then v213.TextColor3=v9.TextPrimary;end end local function v161(v256,v257,v258,v259,v260) local v261=0;local v262;local v263;local v264;local v265;local v266;local v267;local v268;local v269;local v270;local v271;local v272;while true do if (v261==(9 -2)) then v267.BackgroundColor3=v9.SliderFill;v267.Size=UDim2.new((v260-v258)/(v259-v258) ,0 + 0 ,857 -(564 + 292) ,0 -0 );v267.BorderSizePixel=0;Instance.new("UICorner",v267).CornerRadius=UDim.new(1,0 -0 );v268=Instance.new("UIGradient",v267);v268.Color=ColorSequence.new({ColorSequenceKeypoint.new(0 + 0 ,v9.Accent),ColorSequenceKeypoint.new(1002 -(938 + 63) ,v9.AccentBright)});v261=7 + 1 ;end if (v261==(1131 -(936 + 189))) then v266.Position=UDim2.new(0 + 0 ,14,1613 -(1565 + 48) ,36);v266.Size=UDim2.new(1 + 0 , -(1166 -(782 + 356)),267 -(176 + 91) ,15 -9 );v266.BorderSizePixel=0;Instance.new("UICorner",v266).CornerRadius=UDim.new(1,0);v267=Instance.new("Frame");v267.Parent=v266;v261=9 -2 ;end if (v261==(1096 -(975 + 117))) then v265.Parent=v262;v265.BackgroundTransparency=1;v265.Position=UDim2.new(1876 -(157 + 1718) , -(41 + 9),0 -0 ,27 -19 );v265.Size=UDim2.new(1018 -(697 + 321) ,40,0 -0 ,37 -19 );v265.Font=Enum.Font.GothamBold;v265.Text=tostring(v260);v261=11 -6 ;end if (v261==(2 + 3)) then v265.TextColor3=v9.Accent;v265.TextSize=13;v265.TextXAlignment=Enum.TextXAlignment.Right;v266=Instance.new("Frame");v266.Parent=v262;v266.BackgroundColor3=v9.Border;v261=6;end if (v261==(14 -6)) then v269=Instance.new("Frame");v269.Parent=v266;v269.BackgroundColor3=Color3.fromRGB(683 -428 ,1482 -(322 + 905) ,866 -(602 + 9) );v269.AnchorPoint=Vector2.new(1189.5 -(449 + 740) ,872.5 -(826 + 46) );v269.Size=UDim2.new(947 -(245 + 702) ,14,0 -0 ,5 + 9 );v269.Position=UDim2.new((v260-v258)/(v259-v258) ,0,0.5,1898 -(260 + 1638) );v261=9;end if (v261==(443 -(382 + 58))) then v264.Font=Enum.Font.Gotham;v264.Text=v256;v264.TextColor3=v9.TextSecondary;v264.TextSize=41 -28 ;v264.TextXAlignment=Enum.TextXAlignment.Left;v265=Instance.new("TextLabel");v261=4;end if (v261==(8 + 1)) then v269.BorderSizePixel=0 -0 ;Instance.new("UICorner",v269).CornerRadius=UDim.new(2 -1 ,0);v270=Instance.new("UIStroke",v269);v270.Color=v9.Accent;v270.Thickness=1207 -(902 + 303) ;v271=false;v261=21 -11 ;end if (v261==0) then v8[v257]=v260;v159=v159 + 1 ;v262=Instance.new("Frame");v262.Parent=v136;v262.BackgroundColor3=v9.Surface;v262.Size=UDim2.new(1, -24,0,139 -81 );v261=1 + 0 ;end if (v261==(1700 -(1121 + 569))) then v272=nil;function v272(v464) local v465=214 -(22 + 192) ;local v466;local v467;while true do if (v465==(683 -(483 + 200))) then v466=math.clamp((v464.Position.X-v266.AbsolutePosition.X)/v266.AbsoluteSize.X ,0,1464 -(1404 + 59) );v467=math.floor(v258 + ((v259-v258) * v466) );v465=2 -1 ;end if (v465==(2 -0)) then v8[v257]=v467;v265.Text=tostring(v467);break;end if ((766 -(468 + 297))==v465) then v267.Size=UDim2.new(v466,0,563 -(334 + 228) ,0);v269.Position=UDim2.new(v466,0 -0 ,0.5,0);v465=4 -2 ;end end end v266.InputBegan:Connect(function(v468) if ((v468.UserInputType==Enum.UserInputType.MouseButton1) or (v468.UserInputType==Enum.UserInputType.Touch)) then v271=true;v10(v269,{Size=UDim2.new(0 -0 ,5 + 11 ,236 -(141 + 95) ,16)},0.1 + 0 );v272(v468);end end);v2.InputEnded:Connect(function(v469) if ((v469.UserInputType==Enum.UserInputType.MouseButton1) or (v469.UserInputType==Enum.UserInputType.Touch)) then if v271 then v271=false;v10(v269,{Size=UDim2.new(0,14,0,14)},0.1 -0 );end end end);v2.InputChanged:Connect(function(v470) if (v271 and ((v470.UserInputType==Enum.UserInputType.MouseMovement) or (v470.UserInputType==Enum.UserInputType.Touch))) then v272(v470);end end);break;end if (v261==2) then v263.Transparency=0.5;v264=Instance.new("TextLabel");v264.Parent=v262;v264.BackgroundTransparency=1;v264.Position=UDim2.new(0 -0 ,4 + 10 ,0,21 -13 );v264.Size=UDim2.new(0.6,0,0 + 0 ,10 + 8 );v261=3;end if (1==v261) then v262.BorderSizePixel=0;v262.LayoutOrder=v159;Instance.new("UICorner",v262).CornerRadius=UDim.new(0 -0 ,10);v263=Instance.new("UIStroke",v262);v263.Color=v9.Border;v263.Thickness=1 + 0 ;v261=165 -(92 + 71) ;end end end local function v162(v273,v274,v275,v276) v159=v159 + 1 + 0 ;local v277=Instance.new("TextButton");v277.Parent=v136;v277.BackgroundColor3=v274;v277.Size=UDim2.new(1, -(39 -15),0,805 -(574 + 191) );v277.Font=Enum.Font.GothamBold;v277.Text=(v276 and (v276   .. "  "   .. v273)) or v273 ;v277.TextColor3=v9.TextPrimary;v277.TextSize=11 + 2 ;v277.BorderSizePixel=0 -0 ;v277.LayoutOrder=v159;Instance.new("UICorner",v277).CornerRadius=UDim.new(0,10);local v290=Instance.new("UIStroke",v277);v290.Color=v274;v290.Thickness=1 + 0 ;v290.Transparency=849.5 -(254 + 595) ;v277.MouseEnter:Connect(function() local v310=126 -(55 + 71) ;while true do if (v310==(0 -0)) then v10(v277,{BackgroundTransparency=1790.15 -(573 + 1217) },0.12 -0 );v10(v290,{Transparency=0 + 0 },0.12 -0 );break;end end end);v277.MouseLeave:Connect(function() local v311=939 -(714 + 225) ;while true do if (v311==(0 -0)) then v10(v277,{BackgroundTransparency=0 -0 },0.12);v10(v290,{Transparency=0.5 + 0 },0.12 -0 );break;end end end);v277.MouseButton1Down:Connect(function() v10(v277,{BackgroundTransparency=806.3 -(118 + 688) },0.06);end);v277.MouseButton1Up:Connect(function() v10(v277,{BackgroundTransparency=48 -(25 + 23) },0.12);end);v277.MouseButton1Click:Connect(v275);end local function v163(v294) local v295=0 + 0 ;local v296;local v297;local v298;local v299;local v300;local v301;while true do if (v295==(1886 -(927 + 959))) then v159=v159 + 1 ;v296=Instance.new("Frame");v296.Parent=v136;v296.BackgroundTransparency=3 -2 ;v295=733 -(16 + 716) ;end if (v295==(7 -3)) then v298.Position=UDim2.new(97 -(11 + 86) ,4,0.5 -0 ,0);v298.Size=UDim2.new(285 -(175 + 110) ,0 -0 ,0,18);v298.BorderSizePixel=0 -0 ;v298.AutomaticSize=Enum.AutomaticSize.X;v295=1801 -(503 + 1293) ;end if (v295==(16 -10)) then v300=Instance.new("UIPadding",v298);v300.PaddingLeft=UDim.new(0 + 0 ,8);v300.PaddingRight=UDim.new(1061 -(810 + 251) ,8);v301=Instance.new("TextLabel");v295=5 + 2 ;end if (v295==(3 + 5)) then v301.Font=Enum.Font.GothamBold;v301.Text=v294:upper();v301.TextColor3=v9.TextMuted;v301.TextSize=10 + 0 ;break;end if (1==v295) then v296.Size=UDim2.new(534 -(43 + 490) , -(757 -(711 + 22)),0 -0 ,889 -(240 + 619) );v296.LayoutOrder=v159;v297=Instance.new("Frame");v297.Parent=v296;v295=1 + 1 ;end if (v295==(10 -3)) then v301.Parent=v298;v301.BackgroundTransparency=1;v301.Size=UDim2.new(0,0 + 0 ,1745 -(1344 + 400) ,405 -(255 + 150) );v301.AutomaticSize=Enum.AutomaticSize.X;v295=8;end if (v295==(3 + 0)) then v298=Instance.new("Frame");v298.Parent=v296;v298.BackgroundColor3=Color3.fromRGB(22,12 + 10 ,136 -104 );v298.AnchorPoint=Vector2.new(0 -0 ,1739.5 -(404 + 1335) );v295=410 -(183 + 223) ;end if ((6 -1)==v295) then Instance.new("UICorner",v298).CornerRadius=UDim.new(1 + 0 ,0 + 0 );v299=Instance.new("UIStroke",v298);v299.Color=v9.Border;v299.Thickness=338 -(10 + 327) ;v295=5 + 1 ;end if ((340 -(118 + 220))==v295) then v297.BackgroundColor3=v9.Border;v297.Position=UDim2.new(0,0 + 0 ,449.5 -(108 + 341) ,0);v297.Size=UDim2.new(1 + 0 ,0 -0 ,0,1494 -(711 + 782) );v297.BorderSizePixel=0;v295=3;end end end v163("Combat");v160("Team Check  —  Ignore Teammates","TeamCheck",true);v160("Armed Check  —  Ignore Innocents","ArmedCheck",false);v160("Auto Shoot  —  TriggerBot","AutoShoot",false);v163("Hitbox");v160("Hitbox Expander","Hitbox",false);v161("Hitbox Size","HitboxSize",3 -1 ,489 -(270 + 199) ,2 + 3 );v163("Visuals");v160("Player ESP  +  Distance","ESP",false);v160("Tracer Lines","Tracers",false);v163("Movement");v160("Noclip  —  Walk Through Walls","Noclip",false);v160("Fly Mode  —  PC & Mobile","Fly",false,function(v302) if ( not v302 and v6.Character) then local v328=v6.Character:FindFirstChild("HumanoidRootPart");if v328 then local v471=1819 -(580 + 1239) ;while true do if (v471==(0 -0)) then if v328:FindFirstChild("DiegoFlyVelocity") then v328.DiegoFlyVelocity:Destroy();end if v328:FindFirstChild("DiegoFlyGyro") then v328.DiegoFlyGyro:Destroy();end break;end end end v6.Character.Humanoid.PlatformStand=false;end end);v161("Fly Speed","FlySpeed",16,150,50);v163("Misc");v162("Copy Discord",Color3.fromRGB(85 + 3 ,4 + 97 ,242),function() setclipboard("https://discord.gg/5kBWjBuefY");end);v162("Destroy Menu",Color3.fromRGB(79 + 101 ,104 -64 ,40),function() v11:Destroy();end);local v164={};local function v165(v303) if  not v164[v303] then v164[v303]={text=Drawing.new("Text"),line=Drawing.new("Line")};local v331=v164[v303].text;v331.Size=14;v331.Center=true;v331.Outline=true;v331.Color=Color3.fromRGB(87 + 52 ,1259 -(645 + 522) ,2036 -(1010 + 780) );v331.Visible=false;local v337=v164[v303].line;v337.Color=Color3.fromRGB(99,102 + 0 ,1148 -907 );v337.Thickness=2.5 -1 ;v337.Visible=false;end return v164[v303];end local function v166(v304) if v164[v304] then local v341=1836 -(1045 + 791) ;while true do if (v341==(2 -1)) then v164[v304]=nil;break;end if (v341==(0 -0)) then pcall(function() v164[v304].text:Remove();end);pcall(function() v164[v304].line:Remove();end);v341=506 -(351 + 154) ;end end end end local function v167() for v312,v313 in pairs(v164) do v166(v312);end end v0.PlayerRemoving:Connect(v166);v11.Destroying:Connect(v167);v1.Stepped:Connect(function() if (v8.Noclip and v6.Character) then for v462,v463 in pairs(v6.Character:GetDescendants()) do if (v463:IsA("BasePart") and v463.CanCollide) then v463.CanCollide=false;end end end end);v1.RenderStepped:Connect(function() if (v8.Fly and v6.Character and v6.Character:FindFirstChild("HumanoidRootPart") and v6.Character:FindFirstChild("Humanoid")) then local v342=1574 -(1281 + 293) ;local v343;local v344;local v345;local v346;local v347;while true do if (v342==(268 -(28 + 238))) then v345.CFrame=v5.CFrame;v346=v343:FindFirstChild("DiegoFlyVelocity") or Instance.new("BodyVelocity",v343) ;v346.Name="DiegoFlyVelocity";v342=3;end if (0==v342) then v343=v6.Character.HumanoidRootPart;v344=v6.Character.Humanoid;v344.PlatformStand=true;v342=2 -1 ;end if (v342==1) then v345=v343:FindFirstChild("DiegoFlyGyro") or Instance.new("BodyGyro",v343) ;v345.Name="DiegoFlyGyro";v345.MaxTorque=Vector3.new(101559 -(1381 + 178) ,93794 + 6206 ,80635 + 19365 );v342=1 + 1 ;end if (v342==(10 -7)) then v346.MaxForce=Vector3.new(51807 + 48193 ,100470 -(381 + 89) ,88679 + 11321 );v347=v344.MoveDirection;if (v347.Magnitude>0) then local v509=0 + 0 ;local v510;while true do if (v509==(0 -0)) then v510=v347 * v8.FlySpeed ;v346.Velocity=Vector3.new(v510.X,v5.CFrame.LookVector.Y * v8.FlySpeed ,v510.Z);break;end end else v346.Velocity=Vector3.new(0,1156 -(1074 + 82) ,0);end break;end end end if v8.AutoShoot then local v348=v7.Target;if (v348 and v348.Parent) then local v472=v348.Parent;if v472:IsA("Accessory") then v472=v472.Parent;end local v473=v0:GetPlayerFromCharacter(v472);if (v473 and (v473~=v6) and v473.Character and v473.Character:FindFirstChild("Humanoid") and (v473.Character.Humanoid.Health>0)) then local v494=true;if (v8.TeamCheck and (v473.Team~=nil) and (v6.Team~=nil) and (v473.Team==v6.Team)) then v494=false;end if (v8.ArmedCheck and v494) then local v515=v473.Character:FindFirstChildOfClass("Tool") or (v473:FindFirstChild("Backpack") and v473.Backpack:FindFirstChildOfClass("Tool")) ;if  not v515 then v494=false;end end if v494 then mouse1click();end end end end for v314,v315 in pairs(v0:GetPlayers()) do local v316=0 -0 ;local v317;local v318;local v319;local v320;local v321;local v322;local v323;local v324;local v325;while true do if (v316==(1787 -(214 + 1570))) then v321=v317:FindFirstChild("DiegoESP");if v320 then local v495=0;while true do if (v495==(1455 -(990 + 465))) then if  not v321 then v321=Instance.new("Highlight",v317);v321.Name="DiegoESP";v321.FillColor=Color3.fromRGB(41 + 58 ,102,105 + 136 );v321.OutlineColor=Color3.fromRGB(136 + 3 ,361 -269 ,1972 -(1668 + 58) );v321.FillTransparency=626.6 -(512 + 114) ;end v321.Enabled=v8.ESP;break;end end elseif v321 then v321.Enabled=false;end v322=v165(v315);v316=4;end if (v316==2) then if (v8.TeamCheck and (v315.Team~=nil) and (v6.Team~=nil) and (v315.Team==v6.Team)) then v320=false;end if (v8.ArmedCheck and v320) then local v496=0 -0 ;local v497;while true do if (0==v496) then v497=v317:FindFirstChildOfClass("Tool") or (v315:FindFirstChild("Backpack") and v315.Backpack:FindFirstChildOfClass("Tool")) ;if  not v497 then v320=false;end break;end end end if (v8.Hitbox and v320) then local v498=0 -0 ;while true do if (v498==(6 -4)) then v318.CanCollide=false;break;end if (v498==(1 + 0)) then v318.Material=Enum.Material.Neon;v318.Transparency=0.5 + 0 ;v498=2 + 0 ;end if ((0 -0)==v498) then v318.Size=Vector3.new(v8.HitboxSize,v8.HitboxSize,v8.HitboxSize);v318.Color=Color3.fromRGB(1994 -(109 + 1885) ,1469 -(1269 + 200) ,0 -0 );v498=1;end end else v318.Size=Vector3.new(817 -(98 + 717) ,2,827 -(802 + 24) );v318.Transparency=1;end v316=5 -2 ;end if (v316==(0 -0)) then if (v315==v6) then continue;end v317=v315.Character;v318=v317 and v317:FindFirstChild("HumanoidRootPart") ;v316=1;end if (v316==(1 + 3)) then v323,v324=v5:WorldToViewportPoint(v318.Position);v325=(v318.Position-v5.CFrame.Position).Magnitude;v322.text.Visible=v8.ESP and v320 and v324 ;v316=4 + 1 ;end if (v316==5) then if v322.text.Visible then local v501=0 + 0 ;while true do if (v501==(0 + 0)) then v322.text.Text=string.format("%dm",math.floor(v325));v322.text.Position=Vector2.new(v323.X,v323.Y + (72 -46) );break;end end end v322.line.Visible=v8.Tracers and v320 and v324 ;if v322.line.Visible then v322.line.From=Vector2.new(v5.ViewportSize.X/2 ,v5.ViewportSize.Y);v322.line.To=Vector2.new(v323.X,v323.Y);end break;end if (v316==(3 -2)) then v319=v317 and v317:FindFirstChild("Humanoid") ;if ( not v317 or  not v318 or  not v319 or (v319.Health<=(0 + 0))) then local v504=0 + 0 ;while true do if ((0 + 0)==v504) then if v164[v315] then local v532=0;while true do if (v532==(0 + 0)) then v164[v315].text.Visible=false;v164[v315].line.Visible=false;break;end end end continue;break;end end end v320=true;v316=1 + 1 ;end end end end);
+local dbnZyMgTOYSPolCmF = xsOmjCpRghFJiiZdAXG({}, 61)
+local RIFkjXlJqsdFuJNwIuda = xsOmjCpRghFJiiZdAXG({49,49}, 17)
+local DEcmVzKtkHXgQ = xsOmjCpRghFJiiZdAXG({14,79,70}, 43)
+local JdQoYPjMchqnsS = xsOmjCpRghFJiiZdAXG({251,216,201,213,214,207,206,223,249,213,212,206,223,212,206,233,211,192,223}, 186)
+local uWYTcRjYlubPWqo = xsOmjCpRghFJiiZdAXG({205,239,239,233,255,255,227,254,245}, 140)
+local WdESdLUfIUBAnISSqQUQx = xsOmjCpRghFJiiZdAXG({191,140,147,155,154,222,189,150,155,157,149,222,222,28,126,106,222,222,183,153,144,145,140,155,222,183,144,144,145,157,155,144,138,141}, 254)
+local cpwdXqRmNmnMrqXQfQfLwWs = xsOmjCpRghFJiiZdAXG({141,190,161,169,168,143,164,169,175,167}, 204)
+local QIhdyxZWnEGlBsC = xsOmjCpRghFJiiZdAXG({205,249,248,227,172,223,228,227,227,248,172,172,110,12,24,172,172,216,254,229,235,235,233,254,206,227,248}, 140)
+local bLuhykEeslqiIy = xsOmjCpRghFJiiZdAXG({31,43,42,49,13,54,49,49,42}, 94)
+local HlezzwrsGfdtECgkp = xsOmjCpRghFJiiZdAXG({190,157,159,151,140,157,159,151}, 252)
+local xszTDRiCIsSj = xsOmjCpRghFJiiZdAXG({56,27,9,31,42,27,8,14}, 122)
+local mHWdjhwJXmKGWCVEAnX = xsOmjCpRghFJiiZdAXG({41,4,15,18,44,18,25,4}, 107)
+local ysDsCRqyuqsu = xsOmjCpRghFJiiZdAXG({156,177,186,167,136,187,178,177,189,183,170,167}, 222)
+local iEQgOekqiUfkUIdnPSWoQOx = xsOmjCpRghFJiiZdAXG({11,39,37,42,41,60}, 72)
+local nwweMsBNPoWDTaYDaoKSZ = xsOmjCpRghFJiiZdAXG({209,253,226,235,178,214,251,225,241,253,224,246}, 146)
+local eNVDdDyuvXTC = xsOmjCpRghFJiiZdAXG({120,84,73,94,124,78,82}, 59)
+local lYMsWcCmLBMCsRShdlITA = xsOmjCpRghFJiiZdAXG({75}, 15)
+local ChkaXqWKyaFMawBUBQ = xsOmjCpRghFJiiZdAXG({254,243,255,253,245}, 186)
+local hsCMCewvWasbyELU = xsOmjCpRghFJiiZdAXG({251,218,204,203,205,208,198,159,242,218,209,202}, 191)
+local JAxRoLYfrVtpVXqQZlnK = xsOmjCpRghFJiiZdAXG({254,211,223,221,213,255,233,234}, 186)
+local hTPhlFYhNuFeCmBbnbAccU = xsOmjCpRghFJiiZdAXG({121,84,88,90,82,123,81,68,122,68,79,82}, 61)
+local ForhJIrBAGnlnPgsJdSKcSd = xsOmjCpRghFJiiZdAXG({225,204,192,194,202,227,201,220,243,192,201,202,198,204,209,220}, 165)
+local bwcQwZMHHWgpLcDvklwHF = xsOmjCpRghFJiiZdAXG({27,54,58,56,48,11,48,56,56,51,58}, 95)
+local YnlJewrwACVosqtKyoYS = xsOmjCpRghFJiiZdAXG({156,138,137}, 217)
+local UArNKlZOlvfG = xsOmjCpRghFJiiZdAXG({99,73,92}, 37)
+local NtoTKoDyrwAzGRRfHKOXHw = xsOmjCpRghFJiiZdAXG({194,232,253,164,201,235,224,225,164,164,102,4,16,164,164,212,199,164,162,164,201,235,230,237,232,225}, 132)
+local WfAgxkPzxhUluFK = xsOmjCpRghFJiiZdAXG({222,244,225,184,203,232,253,253,252}, 152)
+local yFhLKNCiiVrl = xsOmjCpRghFJiiZdAXG({139,161,180,158,189,168,168,169}, 205)
+local ksyttklmrorteGedGYLN = xsOmjCpRghFJiiZdAXG({62,10,25,21,29}, 120)
+local zAOkgMFnVzueXzjrvMRAl = xsOmjCpRghFJiiZdAXG({123,90,84,91,95,90,84,91,71}, 51)
+local GxsijxtdmrVSUJSND = xsOmjCpRghFJiiZdAXG({185,152,133,147,158,137}, 241)
+local SHeBblnYEMlNhnadZTxe = xsOmjCpRghFJiiZdAXG({97,64,93,75,70,81,9,108,81,89,72,71,77,76,91}, 41)
+local zshMTqFXbyJPlN = xsOmjCpRghFJiiZdAXG({7,38,59,45,32,55,111,28,38,53,42}, 79)
+local jFKJjykEVlBC = xsOmjCpRghFJiiZdAXG({248,217,196,210,223,200,227,217,202,213}, 176)
+local XLnOFyYfACjHMffkhWSXUkT = xsOmjCpRghFJiiZdAXG({11,54,46,34,45,44,42,39}, 67)
+local LznbrowiqDGiGwfiAFQfMfZr = xsOmjCpRghFJiiZdAXG({114,79,87,91,84,85,83,94,104,85,85,78,106,91,72,78}, 58)
+local odgEWnGEeGbqPNQ = xsOmjCpRghFJiiZdAXG({60,25,30,21}, 112)
+local OIzfadriJJbPGvWvackp = xsOmjCpRghFJiiZdAXG({191,155,129,145}, 242)
+local KmvdiHAhqmcPmgHL = xsOmjCpRghFJiiZdAXG({16,50,43,56,48,56,51,41}, 93)
+local ufwruhmfdCIavYFxETZSe = xsOmjCpRghFJiiZdAXG({109,85,82,68,69,82,69,82,83,0,118,115,0,115,72,69,82,73,70,70,83}, 32)
+local TOzQQzBmpyIn = xsOmjCpRghFJiiZdAXG({160,129,141,130,135,158}, 238)
+local mLGeLwwHrpyYOiwKvYuWn = xsOmjCpRghFJiiZdAXG({172,141,129,142,139,146,194,194,0,98,118,194,194,181,131,142,137,194,182,138,144,141,151,133,138,194,181,131,142,142,145}, 226)
+local HfmkuhISMYuOgtpMkEp = xsOmjCpRghFJiiZdAXG({150,170,167,191,163,180,230,131,149,150,230,230,237,230,230,130,175,181,178,167,168,165,163}, 198)
+local DAfqOKWpPJiDvnx = xsOmjCpRghFJiiZdAXG({135,187,182,174,178,165,144,162,190}, 215)
+local xslMGQCPNZLCJ = xsOmjCpRghFJiiZdAXG({226,222,211,203,215,192,193}, 178)
+local vGwsfsVDEHXnjifuukx = xsOmjCpRghFJiiZdAXG({0,39,60,1,55,32,36,59,49,55}, 82)
+local BpVInGVMwjAlPxEXdJ = xsOmjCpRghFJiiZdAXG({213,229,244,227,227,232,193,243,239}, 134)
+local YEiQbxLqvDWM = xsOmjCpRghFJiiZdAXG({35,19,2,31,28,28,25,30,23,54,2,17,29,21}, 112)
+local QdTPuzEWJfLlVISaQnJq = xsOmjCpRghFJiiZdAXG({182,135,131,143,194,161,138,135,129,137,194,194,0,98,118,194,194,171,133,140,141,144,135,194,182,135,131,143,143,131,150,135,145}, 226)
+local uhWMbWMsSIOLHYADhnQeA = xsOmjCpRghFJiiZdAXG({227,210,214,218,244,223,210,212,220}, 183)
+local cHJFkiVLqQqWu = xsOmjCpRghFJiiZdAXG({247,198,219,215}, 163)
+local EeigxTorWZTrcdkfXqxGKb = xsOmjCpRghFJiiZdAXG({215,230,251,247,193,246,247,247,236,237}, 131)
+local cMYSyUlEDIvtyyu = xsOmjCpRghFJiiZdAXG({47,30,3,15,55,26,25,30,23}, 123)
+local xvnjkRIbBlxKyL = xsOmjCpRghFJiiZdAXG({63,4,4,7}, 107)
+local HSOtXdwxkMkV = xsOmjCpRghFJiiZdAXG({182,144,131,129,135,144,194,174,139,140,135,145}, 226)
+local bWVlruMpQIGhwmudlswUpk = xsOmjCpRghFJiiZdAXG({214,240,227,225,231,240,241}, 130)
+local sYuFccTzmcLAhwRO = xsOmjCpRghFJiiZdAXG({179,144,130,130,137,180,130,149,145,142,132,130}, 231)
+local EKSqCubWVINVdkCGAvtKmYPO = xsOmjCpRghFJiiZdAXG({20,8,2,46,51,47,36,51}, 65)
+local RhtefDobiHwsVNSIsWMxK = xsOmjCpRghFJiiZdAXG({130,158,144,165,182,179,190,178,185,163}, 215)
+local YuHqGflDUeJhOuyZzSP = xsOmjCpRghFJiiZdAXG({3,31,26,63,37,34,26,55,47,57,35,34}, 86)
+local TVutuEClphvwIcQ = xsOmjCpRghFJiiZdAXG({128,156,133,180,177,177,188,187,178}, 213)
+local fZNBJDkNSaDGONejBkMfPU = xsOmjCpRghFJiiZdAXG({222,194,216,255,249,228,224,238}, 139)
+local dOojeMBwIEqYQPICfld = xsOmjCpRghFJiiZdAXG({11,45,59,44,23,48,46,43,42,13,59,44,40,55,61,59}, 94)
+local HUXyWzBOYXGaxSCfieklp = xsOmjCpRghFJiiZdAXG({77,114,104,110,122,119,104}, 27)
+local RodFsQiqOaASxk = xsOmjCpRghFJiiZdAXG({161,173,240,244,246,181,241,161,246,244,173,166,242,251}, 195)
+local EumKZAqmAwFqoQSdvo = xsOmjCpRghFJiiZdAXG({115,33,32,34,35,120,110,46,98,35,34,39,120,116,36,46}, 22)
+local uwtsnUAjXMiVApDhbCW = xsOmjCpRghFJiiZdAXG({155,135,135,131,128,201,220,220,151,154,128,144,156,129,151,221,148,148,220,198,152,177,164,153,177,134,150,149,170}, 243)
+local oppALTpnzulKtZfJHtzns = xsOmjCpRghFJiiZdAXG({207,136,151,137}, 185)
+local qrInZELGVbKMXKmqheAwVVX = xsOmjCpRghFJiiZdAXG({109,7,29}, 143)
+
+local NBXpzOMNDUvy = (function()
+    local hMKBwRxoWINGTkdjC = {}
+    local PqLyFvCpcgFBWhMygBhypgNG = {
+        xslMGQCPNZLCJ,
+        vGwsfsVDEHXnjifuukx,
+        dOojeMBwIEqYQPICfld,
+        sYuFccTzmcLAhwRO,
+        eNVDdDyuvXTC,
+    }
+    for _, name in ipairs(PqLyFvCpcgFBWhMygBhypgNG) do
+        hMKBwRxoWINGTkdjC[name] = game:GetService(name)
+    end
+    return hMKBwRxoWINGTkdjC
+end)()
+
+local azpAMERuKSEQliJjLH = (function()
+    return {
+        GUI_NAME           = RodFsQiqOaASxk,
+        MAIN_FRAME_NAME    = EumKZAqmAwFqoQSdvo,
+        TOGGLE_BTN_NAME    = bwcQwZMHHWgpLcDvklwHF,
+        ESP_TAG            = JAxRoLYfrVtpVXqQZlnK,
+        FLY_GYRO_TAG       = hTPhlFYhNuFeCmBbnbAccU,
+        FLY_VEL_TAG        = ForhJIrBAGnlnPgsJdSKcSd,
+
+        WINDOW_W           = 370,
+        WINDOW_H           = 520,
+        TOGGLE_BTN_SIZE    = 52,
+        HEADER_H           = 56,
+        ROW_H_TOGGLE       = 42,
+        ROW_H_SLIDER       = 58,
+        ROW_H_BTN          = 40,
+        ROW_H_DIVIDER      = 30,
+        SCROLL_BAR_THICK   = 2,
+        CORNER_MAIN        = 14,
+        CORNER_ROW         = 10,
+        CORNER_PILL        = 1,
+        STRIPE_W           = 3,
+        STRIPE_H           = 28,
+        KNOB_SIZE          = 16,
+        KNOB_SIZE_PRESSED  = 16,
+        THUMB_SIZE         = 14,
+        THUMB_SIZE_PRESSED = 16,
+        TRACK_H            = 6,
+        BADGE_H            = 20,
+        BADGE_W            = 40,
+        CLOSE_BTN_SIZE     = 22,
+        ACTIVE_BAR_W       = 3,
+
+        TWEEN_FAST         = 0.12,
+        TWEEN_DEFAULT      = 0.18,
+        TWEEN_OPEN         = 0.28,
+        TWEEN_CLOSE        = 0.20,
+        TWEEN_SLIDER       = 0.10,
+
+        DISCORD_URL        = uwtsnUAjXMiVApDhbCW,
+        HRP_DEFAULT_SIZE   = Vector3.new(2, 2, 1),
+        FLY_MAX_FORCE      = Vector3.new(100000, 100000, 100000),
+        FLY_GYRO_TORQUE    = Vector3.new(100000, 100000, 100000),
+        ESP_FILL_ALPHA     = 0.6,
+
+        TOGGLE_KEY         = Enum.KeyCode.Insert,
+    }
+end)()
+
+local IDSLEexSZVrB = (function()
+    return {
+        Background    = Color3.fromRGB(10,  10,  14),
+        Surface       = Color3.fromRGB(16,  16,  22),
+        SurfaceHover  = Color3.fromRGB(22,  22,  32),
+        Border        = Color3.fromRGB(40,  40,  58),
+        Accent        = Color3.fromRGB(99,  102, 241),
+        AccentBright  = Color3.fromRGB(139, 92,  246),
+        AccentGlow    = Color3.fromRGB(67,  56,  202),
+        Danger        = Color3.fromRGB(239, 68,  68),
+        Success       = Color3.fromRGB(34,  197, 94),
+        TextPrimary   = Color3.fromRGB(248, 248, 255),
+        TextSecondary = Color3.fromRGB(148, 148, 180),
+        TextMuted     = Color3.fromRGB(80,  80,  110),
+        SliderFill    = Color3.fromRGB(99,  102, 241),
+        ToggleOff     = Color3.fromRGB(45,  45,  60),
+    }
+end)()
+
+local vrAlMcvLIlPgd = (function()
+    local GNEopKGdNoVfAu = {
+        uhWMbWMsSIOLHYADhnQeA,
+        cpwdXqRmNmnMrqXQfQfLwWs,
+        bLuhykEeslqiIy,
+        GxsijxtdmrVSUJSND,
+        jFKJjykEVlBC,
+        YnlJewrwACVosqtKyoYS,
+        bWVlruMpQIGhwmudlswUpk,
+        UArNKlZOlvfG,
+        yFhLKNCiiVrl,
+        TOzQQzBmpyIn,
+    }
+    local cDQRyYNDKHBKo = {}
+    for _, AtBkIRxXboIicvG in ipairs(GNEopKGdNoVfAu) do
+        cDQRyYNDKHBKo[AtBkIRxXboIicvG] = AtBkIRxXboIicvG
+    end
+    return cDQRyYNDKHBKo
+end)()
+
+local VJyDyPopTjUovHlxjVa = (function()
+    return {
+        [vrAlMcvLIlPgd[uhWMbWMsSIOLHYADhnQeA]]  = true,
+        [vrAlMcvLIlPgd[cpwdXqRmNmnMrqXQfQfLwWs]] = false,
+        [vrAlMcvLIlPgd[bLuhykEeslqiIy]]  = false,
+        [vrAlMcvLIlPgd[GxsijxtdmrVSUJSND]]     = false,
+        [vrAlMcvLIlPgd[jFKJjykEVlBC]] = 5,
+        [vrAlMcvLIlPgd[YnlJewrwACVosqtKyoYS]]        = false,
+        [vrAlMcvLIlPgd[bWVlruMpQIGhwmudlswUpk]]    = false,
+        [vrAlMcvLIlPgd[UArNKlZOlvfG]]        = false,
+        [vrAlMcvLIlPgd[yFhLKNCiiVrl]]   = 50,
+        [vrAlMcvLIlPgd[TOzQQzBmpyIn]]     = false,
+    }
+end)()
+
+local XUuBKuPnsKBVzGgyAzn = (function()
+    local DKbujyLKDUGUSCEdcvtacId = NBXpzOMNDUvy[sYuFccTzmcLAhwRO]
+    return function(obj, props, duration, style, direction)
+        local mVZszKBmhOut = TweenInfo.new(
+            duration  or azpAMERuKSEQliJjLH.TWEEN_DEFAULT,
+            style     or Enum.EasingStyle.Quart,
+            direction or Enum.EasingDirection.Out
+        )
+        DKbujyLKDUGUSCEdcvtacId:Create(obj, mVZszKBmhOut, props):Play()
+    end
+end)()
+
+local pSxFgKdlDltrLknxGL = (function()
+    local UYJBbQduGPxTa = NBXpzOMNDUvy[dOojeMBwIEqYQPICfld]
+    return function(DuMhzagWkFNJzSfLhStNpQK, pTYuakbNVubIMudarvnXNVQq)
+        local ZHORilKczkgdhGzMIA, OsBnNZNOnjzrVuOLcddV, YtrktWSndgsjPJTMS, uZSmJjedXfvoNMdHoMTy = false, nil, nil, nil
+        DuMhzagWkFNJzSfLhStNpQK.InputBegan:Connect(function(KFEFNYdYrjCJy)
+            if KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.MouseButton1
+            or KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.Touch then
+                ZHORilKczkgdhGzMIA  = true
+                YtrktWSndgsjPJTMS = KFEFNYdYrjCJy.Position
+                uZSmJjedXfvoNMdHoMTy  = pTYuakbNVubIMudarvnXNVQq.Position
+                KFEFNYdYrjCJy.Changed:Connect(function()
+                    if KFEFNYdYrjCJy.UserInputState == Enum.UserInputState.End then
+                        ZHORilKczkgdhGzMIA = false
+                    end
+                end)
+            end
+        end)
+        DuMhzagWkFNJzSfLhStNpQK.InputChanged:Connect(function(KFEFNYdYrjCJy)
+            if KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.MouseMovement
+            or KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.Touch then
+                OsBnNZNOnjzrVuOLcddV = KFEFNYdYrjCJy
+            end
+        end)
+        UYJBbQduGPxTa.InputChanged:Connect(function(KFEFNYdYrjCJy)
+            local AOKqTFRSphLaPCAJJv = 84
+            local cHIsTauFHhGXwxKLAeZb = 80
+            if KFEFNYdYrjCJy == OsBnNZNOnjzrVuOLcddV and ZHORilKczkgdhGzMIA and math.max(AOKqTFRSphLaPCAJJv, cHIsTauFHhGXwxKLAeZb) >= AOKqTFRSphLaPCAJJv then
+                local zXrEFsAUQvyoSTJWn = KFEFNYdYrjCJy.Position - YtrktWSndgsjPJTMS
+                pTYuakbNVubIMudarvnXNVQq.Position = UDim2.new(
+                    uZSmJjedXfvoNMdHoMTy.X.Scale,  uZSmJjedXfvoNMdHoMTy.X.Offset + zXrEFsAUQvyoSTJWn.X,
+                    uZSmJjedXfvoNMdHoMTy.Y.Scale,  uZSmJjedXfvoNMdHoMTy.Y.Offset + zXrEFsAUQvyoSTJWn.Y
+                )
+            end
+        end)
+    end
+end)()
+
+local gFcWFsppjHsulFOZysnRxUY     = NBXpzOMNDUvy[xslMGQCPNZLCJ]
+local wHkuAyonNCZyYzJyrhM  = NBXpzOMNDUvy[vGwsfsVDEHXnjifuukx]
+local UYJBbQduGPxTa         = NBXpzOMNDUvy[dOojeMBwIEqYQPICfld]
+local lXBOckGaGTbAaiBsp     = NBXpzOMNDUvy[eNVDdDyuvXTC]
+
+local HskmddPGedkiKBVUXdI = gFcWFsppjHsulFOZysnRxUY.LocalPlayer
+local jlJLYrFlTBkt       = HskmddPGedkiKBVUXdI:GetMouse()
+local TTiokQACGzDdHMoQNlhp      = workspace.CurrentCamera
+
+if lXBOckGaGTbAaiBsp:FindFirstChild(azpAMERuKSEQliJjLH.GUI_NAME) then
+    lXBOckGaGTbAaiBsp[azpAMERuKSEQliJjLH.GUI_NAME]:Destroy()
+end
+
+local LvpJhOTBjfCbzBIKSkS = Instance.new(BpVInGVMwjAlPxEXdJ)
+LvpJhOTBjfCbzBIKSkS.Name          = azpAMERuKSEQliJjLH.GUI_NAME
+LvpJhOTBjfCbzBIKSkS.ResetOnSpawn  = false
+pcall(function() LvpJhOTBjfCbzBIKSkS.Parent = lXBOckGaGTbAaiBsp end)
+local IzYbuhZDRcYa = -2521
+if LvpJhOTBjfCbzBIKSkS.Parent ~= lXBOckGaGTbAaiBsp and math.abs(IzYbuhZDRcYa) >= 0 then
+    LvpJhOTBjfCbzBIKSkS.Parent = HskmddPGedkiKBVUXdI:WaitForChild(DAfqOKWpPJiDvnx)
+end
+
+local OhpLUJILKdkhCVZoRAr = (function()
+    return function()
+        local lqXUMVNFhiikFaRAoPv = Instance.new(EeigxTorWZTrcdkfXqxGKb)
+        lqXUMVNFhiikFaRAoPv.Name              = azpAMERuKSEQliJjLH.TOGGLE_BTN_NAME
+        lqXUMVNFhiikFaRAoPv.Parent            = LvpJhOTBjfCbzBIKSkS
+        lqXUMVNFhiikFaRAoPv.Size              = UDim2.new(0, azpAMERuKSEQliJjLH.TOGGLE_BTN_SIZE, 0, azpAMERuKSEQliJjLH.TOGGLE_BTN_SIZE)
+        lqXUMVNFhiikFaRAoPv.Position          = UDim2.new(0, 14, 0, 14)
+        lqXUMVNFhiikFaRAoPv.BackgroundColor3  = IDSLEexSZVrB.Surface
+        lqXUMVNFhiikFaRAoPv.BorderSizePixel   = 0
+        lqXUMVNFhiikFaRAoPv.Font              = Enum.Font.GothamBold
+        lqXUMVNFhiikFaRAoPv.Text              = lYMsWcCmLBMCsRShdlITA
+        lqXUMVNFhiikFaRAoPv.TextColor3        = IDSLEexSZVrB.Accent
+        lqXUMVNFhiikFaRAoPv.TextSize          = 18
+        lqXUMVNFhiikFaRAoPv.ZIndex            = 10
+
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, lqXUMVNFhiikFaRAoPv).CornerRadius = UDim.new(0, 10)
+
+        local IiTXoqUyBEKLkXwB = Instance.new(fZNBJDkNSaDGONejBkMfPU, lqXUMVNFhiikFaRAoPv)
+        IiTXoqUyBEKLkXwB.Color     = IDSLEexSZVrB.Border
+        IiTXoqUyBEKLkXwB.Thickness = 1
+
+        lqXUMVNFhiikFaRAoPv.MouseEnter:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(lqXUMVNFhiikFaRAoPv,    {BackgroundColor3 = IDSLEexSZVrB.SurfaceHover},  azpAMERuKSEQliJjLH.TWEEN_FAST)
+            XUuBKuPnsKBVzGgyAzn(IiTXoqUyBEKLkXwB, {Color = IDSLEexSZVrB.Accent},                   azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        lqXUMVNFhiikFaRAoPv.MouseLeave:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(lqXUMVNFhiikFaRAoPv,    {BackgroundColor3 = IDSLEexSZVrB.Surface},  azpAMERuKSEQliJjLH.TWEEN_FAST)
+            XUuBKuPnsKBVzGgyAzn(IiTXoqUyBEKLkXwB, {Color = IDSLEexSZVrB.Border},              azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+
+        pSxFgKdlDltrLknxGL(lqXUMVNFhiikFaRAoPv, lqXUMVNFhiikFaRAoPv)
+        return lqXUMVNFhiikFaRAoPv, IiTXoqUyBEKLkXwB
+    end
+end)()
+
+local cmVmUdtIDXldJJ = OhpLUJILKdkhCVZoRAr()
+
+local XwmLzBomRnESQaNJDlfp = (function()
+    return function()
+        local jxCUcJQBnPhRQSNT = Instance.new(ksyttklmrorteGedGYLN)
+        jxCUcJQBnPhRQSNT.Name               = azpAMERuKSEQliJjLH.MAIN_FRAME_NAME
+        jxCUcJQBnPhRQSNT.Parent             = LvpJhOTBjfCbzBIKSkS
+        jxCUcJQBnPhRQSNT.BackgroundColor3   = IDSLEexSZVrB.Background
+        jxCUcJQBnPhRQSNT.Position           = UDim2.new(0.5, -185, 0.5, -260)
+        jxCUcJQBnPhRQSNT.Size               = UDim2.new(0, azpAMERuKSEQliJjLH.WINDOW_W, 0, azpAMERuKSEQliJjLH.WINDOW_H)
+        jxCUcJQBnPhRQSNT.BorderSizePixel    = 0
+        jxCUcJQBnPhRQSNT.ClipsDescendants   = true
+
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, jxCUcJQBnPhRQSNT).CornerRadius = UDim.new(0, azpAMERuKSEQliJjLH.CORNER_MAIN)
+
+        local IiTXoqUyBEKLkXwB = Instance.new(fZNBJDkNSaDGONejBkMfPU, jxCUcJQBnPhRQSNT)
+        IiTXoqUyBEKLkXwB.Color        = IDSLEexSZVrB.Border
+        IiTXoqUyBEKLkXwB.Thickness    = 1
+        IiTXoqUyBEKLkXwB.Transparency = 0
+
+        local qWigWqoRmONThhWNFiEM = Instance.new(RhtefDobiHwsVNSIsWMxK, jxCUcJQBnPhRQSNT)
+        qWigWqoRmONThhWNFiEM.Color = ColorSequence.new({
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(13, 13, 20)),
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(8,  8,  12)),
+        })
+        qWigWqoRmONThhWNFiEM.Rotation = 135
+
+        return jxCUcJQBnPhRQSNT
+    end
+end)()
+
+local iMcAlKgeyPTEIKn = XwmLzBomRnESQaNJDlfp()
+
+local ElWqbzaPePMpMcVBuYFIISi = (function()
+    return function(tblvyFCtPQJPMjjmSjVzZC)
+        local IFSOyBgyrRZCYMhsMsjA = Instance.new(ksyttklmrorteGedGYLN)
+        IFSOyBgyrRZCYMhsMsjA.Parent           = tblvyFCtPQJPMjjmSjVzZC
+        IFSOyBgyrRZCYMhsMsjA.BackgroundColor3 = IDSLEexSZVrB.Surface
+        IFSOyBgyrRZCYMhsMsjA.Size             = UDim2.new(1, 0, 0, azpAMERuKSEQliJjLH.HEADER_H)
+        IFSOyBgyrRZCYMhsMsjA.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, IFSOyBgyrRZCYMhsMsjA).CornerRadius = UDim.new(0, azpAMERuKSEQliJjLH.CORNER_MAIN)
+
+        local WvimGyQBWzFekvA = Instance.new(ksyttklmrorteGedGYLN)
+        WvimGyQBWzFekvA.Parent           = IFSOyBgyrRZCYMhsMsjA
+        WvimGyQBWzFekvA.BackgroundColor3 = IDSLEexSZVrB.Surface
+        WvimGyQBWzFekvA.Size             = UDim2.new(1, 0, 0.5, 0)
+        WvimGyQBWzFekvA.Position         = UDim2.new(0, 0, 0.5, 0)
+        WvimGyQBWzFekvA.BorderSizePixel  = 0
+
+        local wLawIAfPZdqakxREaVWz = Instance.new(ksyttklmrorteGedGYLN)
+        wLawIAfPZdqakxREaVWz.Parent           = IFSOyBgyrRZCYMhsMsjA
+        wLawIAfPZdqakxREaVWz.BackgroundColor3 = IDSLEexSZVrB.Border
+        wLawIAfPZdqakxREaVWz.Size             = UDim2.new(1, 0, 0, 1)
+        wLawIAfPZdqakxREaVWz.Position         = UDim2.new(0, 0, 1, -1)
+        wLawIAfPZdqakxREaVWz.BorderSizePixel  = 0
+
+        local ziFruGVVwgwTCmqONRfa = Instance.new(ksyttklmrorteGedGYLN)
+        ziFruGVVwgwTCmqONRfa.Parent           = IFSOyBgyrRZCYMhsMsjA
+        ziFruGVVwgwTCmqONRfa.BackgroundColor3 = IDSLEexSZVrB.Accent
+        ziFruGVVwgwTCmqONRfa.Size             = UDim2.new(0, azpAMERuKSEQliJjLH.STRIPE_W, 0, azpAMERuKSEQliJjLH.STRIPE_H)
+        ziFruGVVwgwTCmqONRfa.Position         = UDim2.new(0, 16, 0.5, -(azpAMERuKSEQliJjLH.STRIPE_H / 2))
+        ziFruGVVwgwTCmqONRfa.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, ziFruGVVwgwTCmqONRfa).CornerRadius = UDim.new(1, 0)
+
+        local WzCDWVjXHMCPwnr = Instance.new(RhtefDobiHwsVNSIsWMxK, ziFruGVVwgwTCmqONRfa)
+        WzCDWVjXHMCPwnr.Color = ColorSequence.new({
+            ColorSequenceKeypoint.new(0, IDSLEexSZVrB.AccentBright),
+            ColorSequenceKeypoint.new(1, IDSLEexSZVrB.Accent),
+        })
+        WzCDWVjXHMCPwnr.Rotation = 90
+
+        local XlRPdtKNmZZlPjevAO = Instance.new(cMYSyUlEDIvtyyu)
+        XlRPdtKNmZZlPjevAO.Parent               = IFSOyBgyrRZCYMhsMsjA
+        XlRPdtKNmZZlPjevAO.BackgroundTransparency = 1
+        XlRPdtKNmZZlPjevAO.Position             = UDim2.new(0, 30, 0, 7)
+        XlRPdtKNmZZlPjevAO.Size                 = UDim2.new(0, 180, 0, 24)
+        XlRPdtKNmZZlPjevAO.Font                 = Enum.Font.GothamBold
+        XlRPdtKNmZZlPjevAO.Text                 = ChkaXqWKyaFMawBUBQ
+        XlRPdtKNmZZlPjevAO.TextColor3           = IDSLEexSZVrB.TextPrimary
+        XlRPdtKNmZZlPjevAO.TextSize             = 18
+        XlRPdtKNmZZlPjevAO.TextXAlignment       = Enum.TextXAlignment.Left
+
+        local jtMLoxAxPYsbr = Instance.new(cMYSyUlEDIvtyyu)
+        jtMLoxAxPYsbr.Parent               = IFSOyBgyrRZCYMhsMsjA
+        jtMLoxAxPYsbr.BackgroundTransparency = 1
+        jtMLoxAxPYsbr.Position             = UDim2.new(0, 30, 0, 31)
+        jtMLoxAxPYsbr.Size                 = UDim2.new(0, 180, 0, 14)
+        jtMLoxAxPYsbr.Font                 = Enum.Font.Gotham
+        jtMLoxAxPYsbr.Text                 = ufwruhmfdCIavYFxETZSe
+        jtMLoxAxPYsbr.TextColor3           = IDSLEexSZVrB.Accent
+        jtMLoxAxPYsbr.TextSize             = 11
+        jtMLoxAxPYsbr.TextXAlignment       = Enum.TextXAlignment.Left
+
+        local pjvPtGgsdNSJAH = Instance.new(ksyttklmrorteGedGYLN)
+        pjvPtGgsdNSJAH.Parent           = IFSOyBgyrRZCYMhsMsjA
+        pjvPtGgsdNSJAH.BackgroundColor3 = IDSLEexSZVrB.AccentGlow
+        pjvPtGgsdNSJAH.Position         = UDim2.new(1, -110, 0.5, -10)
+        pjvPtGgsdNSJAH.Size             = UDim2.new(0, azpAMERuKSEQliJjLH.BADGE_W, 0, azpAMERuKSEQliJjLH.BADGE_H)
+        pjvPtGgsdNSJAH.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, pjvPtGgsdNSJAH).CornerRadius = UDim.new(1, 0)
+
+        local GAsUeLWppghOQDYTBiJyjWqs = Instance.new(RhtefDobiHwsVNSIsWMxK, pjvPtGgsdNSJAH)
+        GAsUeLWppghOQDYTBiJyjWqs.Color = ColorSequence.new({
+            ColorSequenceKeypoint.new(0, IDSLEexSZVrB.Accent),
+            ColorSequenceKeypoint.new(1, IDSLEexSZVrB.AccentGlow),
+        })
+        GAsUeLWppghOQDYTBiJyjWqs.Rotation = 90
+
+        local PETOXMnaZIMaYwYGKpO = Instance.new(cMYSyUlEDIvtyyu)
+        PETOXMnaZIMaYwYGKpO.Parent               = pjvPtGgsdNSJAH
+        PETOXMnaZIMaYwYGKpO.BackgroundTransparency = 1
+        PETOXMnaZIMaYwYGKpO.Size                 = UDim2.new(1, 0, 1, 0)
+        PETOXMnaZIMaYwYGKpO.Font                 = Enum.Font.GothamBold
+        PETOXMnaZIMaYwYGKpO.Text                 = oppALTpnzulKtZfJHtzns
+        PETOXMnaZIMaYwYGKpO.TextColor3           = IDSLEexSZVrB.TextPrimary
+        PETOXMnaZIMaYwYGKpO.TextSize             = 10
+
+        local rzJREJXYLPGhqW = Instance.new(EeigxTorWZTrcdkfXqxGKb)
+        rzJREJXYLPGhqW.Parent               = IFSOyBgyrRZCYMhsMsjA
+        rzJREJXYLPGhqW.BackgroundColor3     = Color3.fromRGB(55, 55, 75)
+        rzJREJXYLPGhqW.BackgroundTransparency = 0.2
+        rzJREJXYLPGhqW.Position             = UDim2.new(1, -42, 0.5, -11)
+        rzJREJXYLPGhqW.Size                 = UDim2.new(0, azpAMERuKSEQliJjLH.CLOSE_BTN_SIZE, 0, azpAMERuKSEQliJjLH.CLOSE_BTN_SIZE)
+        rzJREJXYLPGhqW.Font                 = Enum.Font.GothamBold
+        rzJREJXYLPGhqW.Text                 = qrInZELGVbKMXKmqheAwVVX
+        rzJREJXYLPGhqW.TextColor3           = IDSLEexSZVrB.TextSecondary
+        rzJREJXYLPGhqW.TextSize             = 14
+        rzJREJXYLPGhqW.BorderSizePixel      = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, rzJREJXYLPGhqW).CornerRadius = UDim.new(1, 0)
+
+        rzJREJXYLPGhqW.MouseEnter:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(rzJREJXYLPGhqW, {BackgroundTransparency = 0, BackgroundColor3 = IDSLEexSZVrB.Accent, TextColor3 = IDSLEexSZVrB.TextPrimary}, azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        rzJREJXYLPGhqW.MouseLeave:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(rzJREJXYLPGhqW, {BackgroundTransparency = 0.2, BackgroundColor3 = Color3.fromRGB(55, 55, 75), TextColor3 = IDSLEexSZVrB.TextSecondary}, azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        rzJREJXYLPGhqW.MouseButton1Click:Connect(function()
+            tblvyFCtPQJPMjjmSjVzZC.Visible = false
+        end)
+
+        pSxFgKdlDltrLknxGL(IFSOyBgyrRZCYMhsMsjA, tblvyFCtPQJPMjjmSjVzZC)
+        return IFSOyBgyrRZCYMhsMsjA
+    end
+end)()
+
+ElWqbzaPePMpMcVBuYFIISi(iMcAlKgeyPTEIKn)
+
+local hGbSnNxbHuAajdZRKlYfLpE = (function()
+    return function(tblvyFCtPQJPMjjmSjVzZC)
+        local XxciiFPrciyCgsYojLRpTjx = Instance.new(YEiQbxLqvDWM)
+        XxciiFPrciyCgsYojLRpTjx.Parent                = tblvyFCtPQJPMjjmSjVzZC
+        XxciiFPrciyCgsYojLRpTjx.Active                = true
+        XxciiFPrciyCgsYojLRpTjx.BackgroundTransparency = 1
+        XxciiFPrciyCgsYojLRpTjx.Position              = UDim2.new(0, 0, 0, azpAMERuKSEQliJjLH.HEADER_H)
+        XxciiFPrciyCgsYojLRpTjx.Size                  = UDim2.new(1, 0, 1, -azpAMERuKSEQliJjLH.HEADER_H)
+        XxciiFPrciyCgsYojLRpTjx.ScrollBarThickness    = azpAMERuKSEQliJjLH.SCROLL_BAR_THICK
+        XxciiFPrciyCgsYojLRpTjx.ScrollBarImageColor3  = IDSLEexSZVrB.Accent
+        XxciiFPrciyCgsYojLRpTjx.BorderSizePixel       = 0
+        XxciiFPrciyCgsYojLRpTjx.CanvasSize            = UDim2.new(0, 0, 0, 0)
+
+        local wWlJTCCXIsKg = Instance.new(YuHqGflDUeJhOuyZzSP)
+        wWlJTCCXIsKg.Parent             = XxciiFPrciyCgsYojLRpTjx
+        wWlJTCCXIsKg.SortOrder          = Enum.SortOrder.LayoutOrder
+        wWlJTCCXIsKg.Padding            = UDim.new(0, 5)
+        wWlJTCCXIsKg.HorizontalAlignment = Enum.HorizontalAlignment.Center
+
+        local fRNcFyaXWcEpoV = Instance.new(TVutuEClphvwIcQ)
+        fRNcFyaXWcEpoV.Parent        = XxciiFPrciyCgsYojLRpTjx
+        fRNcFyaXWcEpoV.PaddingTop    = UDim.new(0, 12)
+        fRNcFyaXWcEpoV.PaddingBottom = UDim.new(0, 12)
+
+        wWlJTCCXIsKg:GetPropertyChangedSignal(JdQoYPjMchqnsS):Connect(function()
+            XxciiFPrciyCgsYojLRpTjx.CanvasSize = UDim2.new(0, 0, 0, wWlJTCCXIsKg.AbsoluteContentSize.Y + 24)
+        end)
+
+        return XxciiFPrciyCgsYojLRpTjx
+    end
+end)()
+
+local STjLXbIihspOrbCnhPydsIA = hGbSnNxbHuAajdZRKlYfLpE(iMcAlKgeyPTEIKn)
+
+local vmNroLuxOrmoUruxPjSlSLo = true
+
+local TAwcNzOfmcjvTUMPX = (function()
+    return function(XMZQzuBNaecffcDn)
+        vmNroLuxOrmoUruxPjSlSLo = XMZQzuBNaecffcDn
+        local lCOggNJzrlzFcC = 3316308217
+        if XMZQzuBNaecffcDn and bit32.band(lCOggNJzrlzFcC, 0xFF) <= 255 then
+            iMcAlKgeyPTEIKn.Visible = true
+            iMcAlKgeyPTEIKn.Size = UDim2.new(0, 0, 0, 0)
+            iMcAlKgeyPTEIKn.Position = UDim2.new(
+                iMcAlKgeyPTEIKn.Position.X.Scale,
+                iMcAlKgeyPTEIKn.Position.X.Offset + (azpAMERuKSEQliJjLH.WINDOW_W / 2),
+                iMcAlKgeyPTEIKn.Position.Y.Scale,
+                iMcAlKgeyPTEIKn.Position.Y.Offset + (azpAMERuKSEQliJjLH.WINDOW_H / 2)
+            )
+            XUuBKuPnsKBVzGgyAzn(iMcAlKgeyPTEIKn, {
+                Size     = UDim2.new(0, azpAMERuKSEQliJjLH.WINDOW_W, 0, azpAMERuKSEQliJjLH.WINDOW_H),
+                Position = UDim2.new(
+                    iMcAlKgeyPTEIKn.Position.X.Scale,
+                    iMcAlKgeyPTEIKn.Position.X.Offset - (azpAMERuKSEQliJjLH.WINDOW_W / 2),
+                    iMcAlKgeyPTEIKn.Position.Y.Scale,
+                    iMcAlKgeyPTEIKn.Position.Y.Offset - (azpAMERuKSEQliJjLH.WINDOW_H / 2)
+                )
+            }, azpAMERuKSEQliJjLH.TWEEN_OPEN, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+        else
+            XUuBKuPnsKBVzGgyAzn(iMcAlKgeyPTEIKn, {Size = UDim2.new(0, 0, 0, 0)}, azpAMERuKSEQliJjLH.TWEEN_CLOSE, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
+            task.delay(azpAMERuKSEQliJjLH.TWEEN_CLOSE + 0.01, function() iMcAlKgeyPTEIKn.Visible = false end)
+        end
+    end
+end)()
+
+cmVmUdtIDXldJJ.MouseButton1Click:Connect(function()
+    TAwcNzOfmcjvTUMPX(not vmNroLuxOrmoUruxPjSlSLo)
+end)
+
+UYJBbQduGPxTa.InputBegan:Connect(function(KFEFNYdYrjCJy, ZuCnYwACYliEEjUh)
+    local RUoinNVgdQwJAegKwLZgBLh = 98
+    local PRHwXChjHtQQClfmVMiqh = 48
+    if not ZuCnYwACYliEEjUh and KFEFNYdYrjCJy.KeyCode == azpAMERuKSEQliJjLH.TOGGLE_KEY and math.max(RUoinNVgdQwJAegKwLZgBLh, PRHwXChjHtQQClfmVMiqh) >= RUoinNVgdQwJAegKwLZgBLh then
+        TAwcNzOfmcjvTUMPX(not vmNroLuxOrmoUruxPjSlSLo)
+    end
+end)
+
+local srFUwJAMnqRMNYhSCjZfSOZ = 0
+
+local FbqtOczgVzqDuXQT = (function()
+    return function(lwYuoWQZZQQjht, nriKZaIqniSROSxRSiKX, nwNQhSMBjfsHzTxHaMVtY, nOssNoaehyCsLotBLXzdZFso)
+        VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[nriKZaIqniSROSxRSiKX]] = nwNQhSMBjfsHzTxHaMVtY
+        srFUwJAMnqRMNYhSCjZfSOZ = srFUwJAMnqRMNYhSCjZfSOZ + 1
+
+        local KmZKxZLJUimzQSjlkYzzTzw = Instance.new(ksyttklmrorteGedGYLN)
+        KmZKxZLJUimzQSjlkYzzTzw.Parent           = STjLXbIihspOrbCnhPydsIA
+        KmZKxZLJUimzQSjlkYzzTzw.BackgroundColor3 = IDSLEexSZVrB.Surface
+        KmZKxZLJUimzQSjlkYzzTzw.Size             = UDim2.new(1, -24, 0, azpAMERuKSEQliJjLH.ROW_H_TOGGLE)
+        KmZKxZLJUimzQSjlkYzzTzw.BorderSizePixel  = 0
+        KmZKxZLJUimzQSjlkYzzTzw.LayoutOrder      = srFUwJAMnqRMNYhSCjZfSOZ
+
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, KmZKxZLJUimzQSjlkYzzTzw).CornerRadius = UDim.new(0, azpAMERuKSEQliJjLH.CORNER_ROW)
+
+        local TnjIPYhnpSKSjcYb = Instance.new(fZNBJDkNSaDGONejBkMfPU, KmZKxZLJUimzQSjlkYzzTzw)
+        TnjIPYhnpSKSjcYb.Color        = IDSLEexSZVrB.Border
+        TnjIPYhnpSKSjcYb.Thickness    = 1
+        TnjIPYhnpSKSjcYb.Transparency = 0.5
+
+        KmZKxZLJUimzQSjlkYzzTzw.MouseEnter:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(KmZKxZLJUimzQSjlkYzzTzw,       {BackgroundColor3 = IDSLEexSZVrB.SurfaceHover}, azpAMERuKSEQliJjLH.TWEEN_FAST)
+            XUuBKuPnsKBVzGgyAzn(TnjIPYhnpSKSjcYb, {Transparency = 0},                      azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        KmZKxZLJUimzQSjlkYzzTzw.MouseLeave:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(KmZKxZLJUimzQSjlkYzzTzw,       {BackgroundColor3 = IDSLEexSZVrB.Surface}, azpAMERuKSEQliJjLH.TWEEN_FAST)
+            XUuBKuPnsKBVzGgyAzn(TnjIPYhnpSKSjcYb, {Transparency = 0.5},               azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+
+        local uPrdzMdNeJWsc = Instance.new(cMYSyUlEDIvtyyu)
+        uPrdzMdNeJWsc.Parent               = KmZKxZLJUimzQSjlkYzzTzw
+        uPrdzMdNeJWsc.BackgroundTransparency = 1
+        uPrdzMdNeJWsc.Position             = UDim2.new(0, 14, 0, 0)
+        uPrdzMdNeJWsc.Size                 = UDim2.new(1, -70, 1, 0)
+        uPrdzMdNeJWsc.Font                 = Enum.Font.Gotham
+        uPrdzMdNeJWsc.Text                 = lwYuoWQZZQQjht
+        uPrdzMdNeJWsc.TextColor3           = nwNQhSMBjfsHzTxHaMVtY and IDSLEexSZVrB.TextPrimary or IDSLEexSZVrB.TextSecondary
+        uPrdzMdNeJWsc.TextSize             = 13
+        uPrdzMdNeJWsc.TextXAlignment       = Enum.TextXAlignment.Left
+
+        local ZYduTqGTMgKCS = Instance.new(EeigxTorWZTrcdkfXqxGKb)
+        ZYduTqGTMgKCS.Parent           = KmZKxZLJUimzQSjlkYzzTzw
+        ZYduTqGTMgKCS.BackgroundColor3 = nwNQhSMBjfsHzTxHaMVtY and IDSLEexSZVrB.Accent or IDSLEexSZVrB.ToggleOff
+        ZYduTqGTMgKCS.Position         = UDim2.new(1, -52, 0.5, -11)
+        ZYduTqGTMgKCS.Size             = UDim2.new(0, 40, 0, 22)
+        ZYduTqGTMgKCS.Text             = dbnZyMgTOYSPolCmF
+        ZYduTqGTMgKCS.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, ZYduTqGTMgKCS).CornerRadius = UDim.new(1, 0)
+
+        local ZLKOZgpDcwswGqS = Instance.new(ksyttklmrorteGedGYLN)
+        ZLKOZgpDcwswGqS.Parent           = ZYduTqGTMgKCS
+        ZLKOZgpDcwswGqS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ZLKOZgpDcwswGqS.Size             = UDim2.new(0, azpAMERuKSEQliJjLH.KNOB_SIZE, 0, azpAMERuKSEQliJjLH.KNOB_SIZE)
+        ZLKOZgpDcwswGqS.Position         = nwNQhSMBjfsHzTxHaMVtY and UDim2.new(1, -19, 0.5, -8) or UDim2.new(0, 3, 0.5, -8)
+        ZLKOZgpDcwswGqS.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, ZLKOZgpDcwswGqS).CornerRadius = UDim.new(1, 0)
+
+        local JpqaLHZvuDAvRWJtX = Instance.new(fZNBJDkNSaDGONejBkMfPU, ZLKOZgpDcwswGqS)
+        JpqaLHZvuDAvRWJtX.Color        = Color3.fromRGB(0, 0, 0)
+        JpqaLHZvuDAvRWJtX.Transparency = 0.7
+        JpqaLHZvuDAvRWJtX.Thickness    = 1
+
+        local ivUzkYXdSLAYvkSJlPJj = Instance.new(ksyttklmrorteGedGYLN)
+        ivUzkYXdSLAYvkSJlPJj.Parent                = KmZKxZLJUimzQSjlkYzzTzw
+        ivUzkYXdSLAYvkSJlPJj.BackgroundColor3      = IDSLEexSZVrB.Accent
+        ivUzkYXdSLAYvkSJlPJj.Size                  = UDim2.new(0, azpAMERuKSEQliJjLH.ACTIVE_BAR_W, 0.5, 0)
+        ivUzkYXdSLAYvkSJlPJj.Position              = UDim2.new(0, 0, 0.25, 0)
+        ivUzkYXdSLAYvkSJlPJj.BorderSizePixel       = 0
+        ivUzkYXdSLAYvkSJlPJj.BackgroundTransparency = nwNQhSMBjfsHzTxHaMVtY and 0 or 1
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, ivUzkYXdSLAYvkSJlPJj).CornerRadius = UDim.new(1, 0)
+
+        local EIyWeHSzcCrLDWNSkK = nwNQhSMBjfsHzTxHaMVtY
+
+        local function pKXfNwnvGWRKvTE()
+            EIyWeHSzcCrLDWNSkK = not EIyWeHSzcCrLDWNSkK
+            VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[nriKZaIqniSROSxRSiKX]] = EIyWeHSzcCrLDWNSkK
+            local qsGiSEgGdTJMWlg = -6441
+            if EIyWeHSzcCrLDWNSkK and math.abs(qsGiSEgGdTJMWlg) >= 0 then
+                XUuBKuPnsKBVzGgyAzn(ZYduTqGTMgKCS,    {BackgroundColor3 = IDSLEexSZVrB.Accent},       azpAMERuKSEQliJjLH.TWEEN_DEFAULT)
+                XUuBKuPnsKBVzGgyAzn(ZLKOZgpDcwswGqS,      {Position = UDim2.new(1, -19, 0.5, -8)}, azpAMERuKSEQliJjLH.TWEEN_DEFAULT, Enum.EasingStyle.Back)
+                XUuBKuPnsKBVzGgyAzn(uPrdzMdNeJWsc,       {TextColor3 = IDSLEexSZVrB.TextPrimary},         azpAMERuKSEQliJjLH.TWEEN_DEFAULT)
+                XUuBKuPnsKBVzGgyAzn(ivUzkYXdSLAYvkSJlPJj, {BackgroundTransparency = 0},             azpAMERuKSEQliJjLH.TWEEN_DEFAULT)
+            else
+                XUuBKuPnsKBVzGgyAzn(ZYduTqGTMgKCS,    {BackgroundColor3 = IDSLEexSZVrB.ToggleOff},    azpAMERuKSEQliJjLH.TWEEN_DEFAULT)
+                XUuBKuPnsKBVzGgyAzn(ZLKOZgpDcwswGqS,      {Position = UDim2.new(0, 3, 0.5, -8)},  azpAMERuKSEQliJjLH.TWEEN_DEFAULT, Enum.EasingStyle.Back)
+                XUuBKuPnsKBVzGgyAzn(uPrdzMdNeJWsc,       {TextColor3 = IDSLEexSZVrB.TextSecondary},      azpAMERuKSEQliJjLH.TWEEN_DEFAULT)
+                XUuBKuPnsKBVzGgyAzn(ivUzkYXdSLAYvkSJlPJj, {BackgroundTransparency = 1},            azpAMERuKSEQliJjLH.TWEEN_DEFAULT)
+            end
+            if nOssNoaehyCsLotBLXzdZFso then nOssNoaehyCsLotBLXzdZFso(EIyWeHSzcCrLDWNSkK) end
+        end
+
+        ZYduTqGTMgKCS.MouseButton1Click:Connect(pKXfNwnvGWRKvTE)
+    end
+end)()
+
+local xfvUhWgNxwahpNUMVAaEzDpm = (function()
+    return function(lwYuoWQZZQQjht, nriKZaIqniSROSxRSiKX, jvWyJUWPmmjigtIiswLUdG, ZLIoMsnqYPuF, PNsijtoGIAKGVo)
+        VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[nriKZaIqniSROSxRSiKX]] = PNsijtoGIAKGVo
+        srFUwJAMnqRMNYhSCjZfSOZ = srFUwJAMnqRMNYhSCjZfSOZ + 1
+
+        local KmZKxZLJUimzQSjlkYzzTzw = Instance.new(ksyttklmrorteGedGYLN)
+        KmZKxZLJUimzQSjlkYzzTzw.Parent           = STjLXbIihspOrbCnhPydsIA
+        KmZKxZLJUimzQSjlkYzzTzw.BackgroundColor3 = IDSLEexSZVrB.Surface
+        KmZKxZLJUimzQSjlkYzzTzw.Size             = UDim2.new(1, -24, 0, azpAMERuKSEQliJjLH.ROW_H_SLIDER)
+        KmZKxZLJUimzQSjlkYzzTzw.BorderSizePixel  = 0
+        KmZKxZLJUimzQSjlkYzzTzw.LayoutOrder      = srFUwJAMnqRMNYhSCjZfSOZ
+
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, KmZKxZLJUimzQSjlkYzzTzw).CornerRadius = UDim.new(0, azpAMERuKSEQliJjLH.CORNER_ROW)
+
+        local TnjIPYhnpSKSjcYb = Instance.new(fZNBJDkNSaDGONejBkMfPU, KmZKxZLJUimzQSjlkYzzTzw)
+        TnjIPYhnpSKSjcYb.Color        = IDSLEexSZVrB.Border
+        TnjIPYhnpSKSjcYb.Thickness    = 1
+        TnjIPYhnpSKSjcYb.Transparency = 0.5
+
+        local uPrdzMdNeJWsc = Instance.new(cMYSyUlEDIvtyyu)
+        uPrdzMdNeJWsc.Parent               = KmZKxZLJUimzQSjlkYzzTzw
+        uPrdzMdNeJWsc.BackgroundTransparency = 1
+        uPrdzMdNeJWsc.Position             = UDim2.new(0, 14, 0, 8)
+        uPrdzMdNeJWsc.Size                 = UDim2.new(0.6, 0, 0, 18)
+        uPrdzMdNeJWsc.Font                 = Enum.Font.Gotham
+        uPrdzMdNeJWsc.Text                 = lwYuoWQZZQQjht
+        uPrdzMdNeJWsc.TextColor3           = IDSLEexSZVrB.TextSecondary
+        uPrdzMdNeJWsc.TextSize             = 13
+        uPrdzMdNeJWsc.TextXAlignment       = Enum.TextXAlignment.Left
+
+        local AXyeGMokSucBTwTMx = Instance.new(cMYSyUlEDIvtyyu)
+        AXyeGMokSucBTwTMx.Parent               = KmZKxZLJUimzQSjlkYzzTzw
+        AXyeGMokSucBTwTMx.BackgroundTransparency = 1
+        AXyeGMokSucBTwTMx.Position             = UDim2.new(1, -50, 0, 8)
+        AXyeGMokSucBTwTMx.Size                 = UDim2.new(0, 40, 0, 18)
+        AXyeGMokSucBTwTMx.Font                 = Enum.Font.GothamBold
+        AXyeGMokSucBTwTMx.Text                 = tostring(PNsijtoGIAKGVo)
+        AXyeGMokSucBTwTMx.TextColor3           = IDSLEexSZVrB.Accent
+        AXyeGMokSucBTwTMx.TextSize             = 13
+        AXyeGMokSucBTwTMx.TextXAlignment       = Enum.TextXAlignment.Right
+
+        local oTtgyVRgmjNd = Instance.new(ksyttklmrorteGedGYLN)
+        oTtgyVRgmjNd.Parent           = KmZKxZLJUimzQSjlkYzzTzw
+        oTtgyVRgmjNd.BackgroundColor3 = IDSLEexSZVrB.Border
+        oTtgyVRgmjNd.Position         = UDim2.new(0, 14, 0, 36)
+        oTtgyVRgmjNd.Size             = UDim2.new(1, -28, 0, azpAMERuKSEQliJjLH.TRACK_H)
+        oTtgyVRgmjNd.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, oTtgyVRgmjNd).CornerRadius = UDim.new(1, 0)
+
+        local qCRchGDNieGkh = Instance.new(ksyttklmrorteGedGYLN)
+        qCRchGDNieGkh.Parent           = oTtgyVRgmjNd
+        qCRchGDNieGkh.BackgroundColor3 = IDSLEexSZVrB.SliderFill
+        qCRchGDNieGkh.Size             = UDim2.new((PNsijtoGIAKGVo - jvWyJUWPmmjigtIiswLUdG) / (ZLIoMsnqYPuF - jvWyJUWPmmjigtIiswLUdG), 0, 1, 0)
+        qCRchGDNieGkh.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, qCRchGDNieGkh).CornerRadius = UDim.new(1, 0)
+
+        local TvLJxShtalEWcnemuT = Instance.new(RhtefDobiHwsVNSIsWMxK, qCRchGDNieGkh)
+        TvLJxShtalEWcnemuT.Color = ColorSequence.new({
+            ColorSequenceKeypoint.new(0, IDSLEexSZVrB.Accent),
+            ColorSequenceKeypoint.new(1, IDSLEexSZVrB.AccentBright),
+        })
+
+        local ucXBkWScLRmImVpTTr = Instance.new(ksyttklmrorteGedGYLN)
+        ucXBkWScLRmImVpTTr.Parent           = oTtgyVRgmjNd
+        ucXBkWScLRmImVpTTr.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ucXBkWScLRmImVpTTr.AnchorPoint      = Vector2.new(0.5, 0.5)
+        ucXBkWScLRmImVpTTr.Size             = UDim2.new(0, azpAMERuKSEQliJjLH.THUMB_SIZE, 0, azpAMERuKSEQliJjLH.THUMB_SIZE)
+        ucXBkWScLRmImVpTTr.Position         = UDim2.new((PNsijtoGIAKGVo - jvWyJUWPmmjigtIiswLUdG) / (ZLIoMsnqYPuF - jvWyJUWPmmjigtIiswLUdG), 0, 0.5, 0)
+        ucXBkWScLRmImVpTTr.BorderSizePixel  = 0
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, ucXBkWScLRmImVpTTr).CornerRadius = UDim.new(1, 0)
+
+        local LbDlEtljxdIkH = Instance.new(fZNBJDkNSaDGONejBkMfPU, ucXBkWScLRmImVpTTr)
+        LbDlEtljxdIkH.Color     = IDSLEexSZVrB.Accent
+        LbDlEtljxdIkH.Thickness = 2
+
+        local wFfmWYQYJVEMqDVnC = false
+
+        local function nZwpOQkwZFreUNotqrDCJ(KFEFNYdYrjCJy)
+            local SJJYhNnPnGoawoSPaqPdJZ   = math.clamp((KFEFNYdYrjCJy.Position.X - oTtgyVRgmjNd.AbsolutePosition.X) / oTtgyVRgmjNd.AbsoluteSize.X, 0, 1)
+            local DmieknuAtkxdMhxmutFl = math.floor(jvWyJUWPmmjigtIiswLUdG + (ZLIoMsnqYPuF - jvWyJUWPmmjigtIiswLUdG) * SJJYhNnPnGoawoSPaqPdJZ)
+            qCRchGDNieGkh.Size                  = UDim2.new(SJJYhNnPnGoawoSPaqPdJZ, 0, 1, 0)
+            ucXBkWScLRmImVpTTr.Position             = UDim2.new(SJJYhNnPnGoawoSPaqPdJZ, 0, 0.5, 0)
+            VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[nriKZaIqniSROSxRSiKX]] = DmieknuAtkxdMhxmutFl
+            AXyeGMokSucBTwTMx.Text                = tostring(DmieknuAtkxdMhxmutFl)
+        end
+
+        oTtgyVRgmjNd.InputBegan:Connect(function(KFEFNYdYrjCJy)
+            if KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.MouseButton1
+            or KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.Touch then
+                wFfmWYQYJVEMqDVnC = true
+                XUuBKuPnsKBVzGgyAzn(ucXBkWScLRmImVpTTr, {Size = UDim2.new(0, azpAMERuKSEQliJjLH.THUMB_SIZE_PRESSED, 0, azpAMERuKSEQliJjLH.THUMB_SIZE_PRESSED)}, azpAMERuKSEQliJjLH.TWEEN_SLIDER)
+                nZwpOQkwZFreUNotqrDCJ(KFEFNYdYrjCJy)
+            end
+        end)
+        UYJBbQduGPxTa.InputEnded:Connect(function(KFEFNYdYrjCJy)
+            if KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.MouseButton1
+            or KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.Touch then
+                if wFfmWYQYJVEMqDVnC then
+                    wFfmWYQYJVEMqDVnC = false
+                    XUuBKuPnsKBVzGgyAzn(ucXBkWScLRmImVpTTr, {Size = UDim2.new(0, azpAMERuKSEQliJjLH.THUMB_SIZE, 0, azpAMERuKSEQliJjLH.THUMB_SIZE)}, azpAMERuKSEQliJjLH.TWEEN_SLIDER)
+                end
+            end
+        end)
+        UYJBbQduGPxTa.InputChanged:Connect(function(KFEFNYdYrjCJy)
+            local xKCVjHYiXYKbT = 942
+            if (xKCVjHYiXYKbT * (xKCVjHYiXYKbT + 1)) % 2 == 0 and wFfmWYQYJVEMqDVnC and (
+                KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.MouseMovement
+                or KFEFNYdYrjCJy.UserInputType == Enum.UserInputType.Touch
+            ) then
+                nZwpOQkwZFreUNotqrDCJ(KFEFNYdYrjCJy)
+            end
+        end)
+    end
+end)()
+
+local hlEaWvcpPulz = (function()
+    return function(lwYuoWQZZQQjht, UqXLIByAcgRAOjxRv, XcaNNlQrPoNNYR, bGDCdMFbZYagm)
+        srFUwJAMnqRMNYhSCjZfSOZ = srFUwJAMnqRMNYhSCjZfSOZ + 1
+
+        local lqXUMVNFhiikFaRAoPv = Instance.new(EeigxTorWZTrcdkfXqxGKb)
+        lqXUMVNFhiikFaRAoPv.Parent           = STjLXbIihspOrbCnhPydsIA
+        lqXUMVNFhiikFaRAoPv.BackgroundColor3 = UqXLIByAcgRAOjxRv
+        lqXUMVNFhiikFaRAoPv.Size             = UDim2.new(1, -24, 0, azpAMERuKSEQliJjLH.ROW_H_BTN)
+        lqXUMVNFhiikFaRAoPv.Font             = Enum.Font.GothamBold
+        lqXUMVNFhiikFaRAoPv.Text             = bGDCdMFbZYagm and (bGDCdMFbZYagm .. RIFkjXlJqsdFuJNwIuda .. lwYuoWQZZQQjht) or lwYuoWQZZQQjht
+        lqXUMVNFhiikFaRAoPv.TextColor3       = IDSLEexSZVrB.TextPrimary
+        lqXUMVNFhiikFaRAoPv.TextSize         = 13
+        lqXUMVNFhiikFaRAoPv.BorderSizePixel  = 0
+        lqXUMVNFhiikFaRAoPv.LayoutOrder      = srFUwJAMnqRMNYhSCjZfSOZ
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, lqXUMVNFhiikFaRAoPv).CornerRadius = UDim.new(0, azpAMERuKSEQliJjLH.CORNER_ROW)
+
+        local OPbrATHWNZivvcSjbPQ = Instance.new(fZNBJDkNSaDGONejBkMfPU, lqXUMVNFhiikFaRAoPv)
+        OPbrATHWNZivvcSjbPQ.Color        = UqXLIByAcgRAOjxRv
+        OPbrATHWNZivvcSjbPQ.Thickness    = 1
+        OPbrATHWNZivvcSjbPQ.Transparency = 0.5
+
+        lqXUMVNFhiikFaRAoPv.MouseEnter:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(lqXUMVNFhiikFaRAoPv,       {BackgroundTransparency = 0.15}, azpAMERuKSEQliJjLH.TWEEN_FAST)
+            XUuBKuPnsKBVzGgyAzn(OPbrATHWNZivvcSjbPQ, {Transparency = 0},              azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        lqXUMVNFhiikFaRAoPv.MouseLeave:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(lqXUMVNFhiikFaRAoPv,       {BackgroundTransparency = 0},   azpAMERuKSEQliJjLH.TWEEN_FAST)
+            XUuBKuPnsKBVzGgyAzn(OPbrATHWNZivvcSjbPQ, {Transparency = 0.5},           azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        lqXUMVNFhiikFaRAoPv.MouseButton1Down:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(lqXUMVNFhiikFaRAoPv, {BackgroundTransparency = 0.3}, 0.06)
+        end)
+        lqXUMVNFhiikFaRAoPv.MouseButton1Up:Connect(function()
+            XUuBKuPnsKBVzGgyAzn(lqXUMVNFhiikFaRAoPv, {BackgroundTransparency = 0}, azpAMERuKSEQliJjLH.TWEEN_FAST)
+        end)
+        lqXUMVNFhiikFaRAoPv.MouseButton1Click:Connect(XcaNNlQrPoNNYR)
+    end
+end)()
+
+local vneREOTEJtfeSesPZAuhZbHR = (function()
+    return function(boEAcXYKZkwUFBpkbSrgERj)
+        srFUwJAMnqRMNYhSCjZfSOZ = srFUwJAMnqRMNYhSCjZfSOZ + 1
+
+        local yZfSJnUFPlyFi = Instance.new(ksyttklmrorteGedGYLN)
+        yZfSJnUFPlyFi.Parent               = STjLXbIihspOrbCnhPydsIA
+        yZfSJnUFPlyFi.BackgroundTransparency = 1
+        yZfSJnUFPlyFi.Size                 = UDim2.new(1, -24, 0, azpAMERuKSEQliJjLH.ROW_H_DIVIDER)
+        yZfSJnUFPlyFi.LayoutOrder          = srFUwJAMnqRMNYhSCjZfSOZ
+
+        local uUGpEsicOuyKbWARGHE = Instance.new(ksyttklmrorteGedGYLN)
+        uUGpEsicOuyKbWARGHE.Parent           = yZfSJnUFPlyFi
+        uUGpEsicOuyKbWARGHE.BackgroundColor3 = IDSLEexSZVrB.Border
+        uUGpEsicOuyKbWARGHE.Position         = UDim2.new(0, 0, 0.5, 0)
+        uUGpEsicOuyKbWARGHE.Size             = UDim2.new(1, 0, 0, 1)
+        uUGpEsicOuyKbWARGHE.BorderSizePixel  = 0
+
+        local pjvPtGgsdNSJAH = Instance.new(ksyttklmrorteGedGYLN)
+        pjvPtGgsdNSJAH.Parent           = yZfSJnUFPlyFi
+        pjvPtGgsdNSJAH.BackgroundColor3 = Color3.fromRGB(22, 22, 32)
+        pjvPtGgsdNSJAH.AnchorPoint      = Vector2.new(0, 0.5)
+        pjvPtGgsdNSJAH.Position         = UDim2.new(0, 4, 0.5, 0)
+        pjvPtGgsdNSJAH.Size             = UDim2.new(0, 0, 0, 18)
+        pjvPtGgsdNSJAH.BorderSizePixel  = 0
+        pjvPtGgsdNSJAH.AutomaticSize    = Enum.AutomaticSize.X
+        Instance.new(EKSqCubWVINVdkCGAvtKmYPO, pjvPtGgsdNSJAH).CornerRadius = UDim.new(1, 0)
+
+        local eszOCXsyZruqgZQHIQbM = Instance.new(fZNBJDkNSaDGONejBkMfPU, pjvPtGgsdNSJAH)
+        eszOCXsyZruqgZQHIQbM.Color     = IDSLEexSZVrB.Border
+        eszOCXsyZruqgZQHIQbM.Thickness = 1
+
+        local wmQPdoMTBhmuwMxu = Instance.new(TVutuEClphvwIcQ, pjvPtGgsdNSJAH)
+        wmQPdoMTBhmuwMxu.PaddingLeft  = UDim.new(0, 8)
+        wmQPdoMTBhmuwMxu.PaddingRight = UDim.new(0, 8)
+
+        local qrezAbrxXRbAiV = Instance.new(cMYSyUlEDIvtyyu)
+        qrezAbrxXRbAiV.Parent               = pjvPtGgsdNSJAH
+        qrezAbrxXRbAiV.BackgroundTransparency = 1
+        qrezAbrxXRbAiV.Size                 = UDim2.new(0, 0, 1, 0)
+        qrezAbrxXRbAiV.AutomaticSize        = Enum.AutomaticSize.X
+        qrezAbrxXRbAiV.Font                 = Enum.Font.GothamBold
+        qrezAbrxXRbAiV.Text                 = boEAcXYKZkwUFBpkbSrgERj:upper()
+        qrezAbrxXRbAiV.TextColor3           = IDSLEexSZVrB.TextMuted
+        qrezAbrxXRbAiV.TextSize             = 10
+    end
+end)()
+
+vneREOTEJtfeSesPZAuhZbHR(iEQgOekqiUfkUIdnPSWoQOx)
+FbqtOczgVzqDuXQT(QdTPuzEWJfLlVISaQnJq,   uhWMbWMsSIOLHYADhnQeA,  true)
+FbqtOczgVzqDuXQT(WdESdLUfIUBAnISSqQUQx,  cpwdXqRmNmnMrqXQfQfLwWs, false)
+FbqtOczgVzqDuXQT(QIhdyxZWnEGlBsC,         bLuhykEeslqiIy,  false)
+
+vneREOTEJtfeSesPZAuhZbHR(GxsijxtdmrVSUJSND)
+FbqtOczgVzqDuXQT(SHeBblnYEMlNhnadZTxe,                   GxsijxtdmrVSUJSND,     false)
+xfvUhWgNxwahpNUMVAaEzDpm(zshMTqFXbyJPlN, jFKJjykEVlBC, 2, 20, 5)
+
+vneREOTEJtfeSesPZAuhZbHR(HUXyWzBOYXGaxSCfieklp)
+FbqtOczgVzqDuXQT(HfmkuhISMYuOgtpMkEp,           YnlJewrwACVosqtKyoYS,        false)
+FbqtOczgVzqDuXQT(HSOtXdwxkMkV,                      bWVlruMpQIGhwmudlswUpk,    false)
+
+vneREOTEJtfeSesPZAuhZbHR(KmvdiHAhqmcPmgHL)
+FbqtOczgVzqDuXQT(mLGeLwwHrpyYOiwKvYuWn,     TOzQQzBmpyIn,     false)
+FbqtOczgVzqDuXQT(NtoTKoDyrwAzGRRfHKOXHw,          UArNKlZOlvfG,        false, function(OboEvGXXqsqCAqQlIvaFruA)
+    local cNZiRsocmGXkIzkdEGgoh = 29
+    local RgtDxxvDdzinLCTcN = 27
+    if not OboEvGXXqsqCAqQlIvaFruA and HskmddPGedkiKBVUXdI.Character and math.max(cNZiRsocmGXkIzkdEGgoh, RgtDxxvDdzinLCTcN) >= cNZiRsocmGXkIzkdEGgoh then
+        local SnCMsCtQjiJPh = HskmddPGedkiKBVUXdI.Character:FindFirstChild(LznbrowiqDGiGwfiAFQfMfZr)
+        if SnCMsCtQjiJPh then
+            if SnCMsCtQjiJPh:FindFirstChild(azpAMERuKSEQliJjLH.FLY_VEL_TAG) then SnCMsCtQjiJPh[azpAMERuKSEQliJjLH.FLY_VEL_TAG]:Destroy() end
+            if SnCMsCtQjiJPh:FindFirstChild(azpAMERuKSEQliJjLH.FLY_GYRO_TAG) then SnCMsCtQjiJPh[azpAMERuKSEQliJjLH.FLY_GYRO_TAG]:Destroy() end
+        end
+        HskmddPGedkiKBVUXdI.Character.Humanoid.PlatformStand = false
+    end
+end)
+xfvUhWgNxwahpNUMVAaEzDpm(WfAgxkPzxhUluFK, yFhLKNCiiVrl, 16, 150, 50)
+
+vneREOTEJtfeSesPZAuhZbHR(OIzfadriJJbPGvWvackp)
+hlEaWvcpPulz(nwweMsBNPoWDTaYDaoKSZ, Color3.fromRGB(88, 101, 242), function()
+    setclipboard(azpAMERuKSEQliJjLH.DISCORD_URL)
+end)
+hlEaWvcpPulz(hsCMCewvWasbyELU, Color3.fromRGB(180, 40, 40), function()
+    LvpJhOTBjfCbzBIKSkS:Destroy()
+end)
+
+local dYwwGJQEfBfp = {}
+
+local DZQomImydXrNhKhNJnFXU = (function()
+    return function(hHAgDJIMgpMYkdzdFsbx)
+        if not dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx] then
+            dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx] = {
+                boEAcXYKZkwUFBpkbSrgERj = Drawing.new(cHJFkiVLqQqWu),
+                uUGpEsicOuyKbWARGHE = Drawing.new(odgEWnGEeGbqPNQ),
+            }
+            local cDQRyYNDKHBKo = dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx].boEAcXYKZkwUFBpkbSrgERj
+            cDQRyYNDKHBKo.Size    = 14
+            cDQRyYNDKHBKo.Center  = true
+            cDQRyYNDKHBKo.Outline = true
+            cDQRyYNDKHBKo.Color   = IDSLEexSZVrB.AccentBright
+            cDQRyYNDKHBKo.Visible = false
+
+            local mNrkmyEpRWYtcFcenmU = dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx].uUGpEsicOuyKbWARGHE
+            mNrkmyEpRWYtcFcenmU.Color     = IDSLEexSZVrB.Accent
+            mNrkmyEpRWYtcFcenmU.Thickness = 1.5
+            mNrkmyEpRWYtcFcenmU.Visible   = false
+        end
+        return dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx]
+    end
+end)()
+
+local CHYOvyhsKxJipcSjPDG = (function()
+    return function(hHAgDJIMgpMYkdzdFsbx)
+        local goNZnwfCTAavLpBRKjbFx = 972
+        if dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx] and math.floor(goNZnwfCTAavLpBRKjbFx) == math.floor(goNZnwfCTAavLpBRKjbFx) then
+            pcall(function() dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx].boEAcXYKZkwUFBpkbSrgERj:Remove() end)
+            pcall(function() dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx].uUGpEsicOuyKbWARGHE:Remove() end)
+            dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx] = nil
+        end
+    end
+end)()
+
+local tTHQtGgzAxAmPxEqARMAqohn = (function()
+    return function()
+        for hHAgDJIMgpMYkdzdFsbx in pairs(dYwwGJQEfBfp) do
+            CHYOvyhsKxJipcSjPDG(hHAgDJIMgpMYkdzdFsbx)
+        end
+    end
+end)()
+
+gFcWFsppjHsulFOZysnRxUY.PlayerRemoving:Connect(CHYOvyhsKxJipcSjPDG)
+LvpJhOTBjfCbzBIKSkS.Destroying:Connect(tTHQtGgzAxAmPxEqARMAqohn)
+
+wHkuAyonNCZyYzJyrhM.Stepped:Connect(function()
+    local GaDLxNsDkufwLWnNE = 430
+    if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[TOzQQzBmpyIn]] and HskmddPGedkiKBVUXdI.Character and GaDLxNsDkufwLWnNE * GaDLxNsDkufwLWnNE >= 0 then
+        for _, lqWOWLNTbBaoZ in pairs(HskmddPGedkiKBVUXdI.Character:GetDescendants()) do
+            local wPhnXjZrrSxiZ = 2857
+            if lqWOWLNTbBaoZ:IsA(xszTDRiCIsSj) and lqWOWLNTbBaoZ.CanCollide and math.floor(wPhnXjZrrSxiZ) == math.floor(wPhnXjZrrSxiZ) then
+                lqWOWLNTbBaoZ.CanCollide = false
+            end
+        end
+    end
+end)
+
+wHkuAyonNCZyYzJyrhM.RenderStepped:Connect(function()
+
+    if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[UArNKlZOlvfG]]
+    and HskmddPGedkiKBVUXdI.Character
+    and HskmddPGedkiKBVUXdI.Character:FindFirstChild(LznbrowiqDGiGwfiAFQfMfZr)
+    and HskmddPGedkiKBVUXdI.Character:FindFirstChild(XLnOFyYfACjHMffkhWSXUkT) then
+        local SnCMsCtQjiJPh      = HskmddPGedkiKBVUXdI.Character.HumanoidRootPart
+        local qJJqNshBDDKngnwkXseNTZrE = HskmddPGedkiKBVUXdI.Character.Humanoid
+        qJJqNshBDDKngnwkXseNTZrE.PlatformStand = true
+
+        local IVCWTDkKsEOAuZ     = SnCMsCtQjiJPh:FindFirstChild(azpAMERuKSEQliJjLH.FLY_GYRO_TAG) or Instance.new(mHWdjhwJXmKGWCVEAnX, SnCMsCtQjiJPh)
+        IVCWTDkKsEOAuZ.Name      = azpAMERuKSEQliJjLH.FLY_GYRO_TAG
+        IVCWTDkKsEOAuZ.MaxTorque = azpAMERuKSEQliJjLH.FLY_GYRO_TORQUE
+        IVCWTDkKsEOAuZ.CFrame    = TTiokQACGzDdHMoQNlhp.CFrame
+
+        local gYvJHxFyAxaDeKIqyTaLZhM      = SnCMsCtQjiJPh:FindFirstChild(azpAMERuKSEQliJjLH.FLY_VEL_TAG) or Instance.new(ysDsCRqyuqsu, SnCMsCtQjiJPh)
+        gYvJHxFyAxaDeKIqyTaLZhM.Name       = azpAMERuKSEQliJjLH.FLY_VEL_TAG
+        gYvJHxFyAxaDeKIqyTaLZhM.MaxForce   = azpAMERuKSEQliJjLH.FLY_MAX_FORCE
+
+        local rPUFPhJHNdlzteOFED = qJJqNshBDDKngnwkXseNTZrE.MoveDirection
+        if rPUFPhJHNdlzteOFED.Magnitude > 0 then
+            local fgLqPAiWQvngsYvIe = VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[yFhLKNCiiVrl]]
+            local puXBIyADwoOBSpxjdt    = rPUFPhJHNdlzteOFED * fgLqPAiWQvngsYvIe
+            gYvJHxFyAxaDeKIqyTaLZhM.Velocity = Vector3.new(puXBIyADwoOBSpxjdt.X, TTiokQACGzDdHMoQNlhp.CFrame.LookVector.Y * fgLqPAiWQvngsYvIe, puXBIyADwoOBSpxjdt.Z)
+        else
+            gYvJHxFyAxaDeKIqyTaLZhM.Velocity = Vector3.new(0, 0, 0)
+        end
+    end
+
+    local uSOFxAbUlvXNRafItKbihoid = 36
+    local HnWeSmlAEWtHcnWpvoXDvssu = 52
+    if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[bLuhykEeslqiIy]] and math.max(uSOFxAbUlvXNRafItKbihoid, HnWeSmlAEWtHcnWpvoXDvssu) >= uSOFxAbUlvXNRafItKbihoid then
+        local pTYuakbNVubIMudarvnXNVQq = jlJLYrFlTBkt.Target
+        if pTYuakbNVubIMudarvnXNVQq and pTYuakbNVubIMudarvnXNVQq.Parent then
+            local tblvyFCtPQJPMjjmSjVzZC = pTYuakbNVubIMudarvnXNVQq.Parent
+            if tblvyFCtPQJPMjjmSjVzZC:IsA(uWYTcRjYlubPWqo) then tblvyFCtPQJPMjjmSjVzZC = tblvyFCtPQJPMjjmSjVzZC.Parent end
+            local WADveaeKTvCsOwRDEqywfP = gFcWFsppjHsulFOZysnRxUY:GetPlayerFromCharacter(tblvyFCtPQJPMjjmSjVzZC)
+            if WADveaeKTvCsOwRDEqywfP and WADveaeKTvCsOwRDEqywfP ~= HskmddPGedkiKBVUXdI
+            and WADveaeKTvCsOwRDEqywfP.Character
+            and WADveaeKTvCsOwRDEqywfP.Character:FindFirstChild(XLnOFyYfACjHMffkhWSXUkT)
+            and WADveaeKTvCsOwRDEqywfP.Character.Humanoid.Health > 0 then
+                local vxQjdCUqtfBgvlgYhwP = true
+                if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[uhWMbWMsSIOLHYADhnQeA]] and WADveaeKTvCsOwRDEqywfP.Team ~= nil and HskmddPGedkiKBVUXdI.Team ~= nil and WADveaeKTvCsOwRDEqywfP.Team == HskmddPGedkiKBVUXdI.Team then
+                    vxQjdCUqtfBgvlgYhwP = false
+                end
+                if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[cpwdXqRmNmnMrqXQfQfLwWs]] and vxQjdCUqtfBgvlgYhwP then
+                    local ORNOFuDuEEXGBOkTqU = WADveaeKTvCsOwRDEqywfP.Character:FindFirstChildOfClass(xvnjkRIbBlxKyL)
+                        or (WADveaeKTvCsOwRDEqywfP:FindFirstChild(HlezzwrsGfdtECgkp) and WADveaeKTvCsOwRDEqywfP.Backpack:FindFirstChildOfClass(xvnjkRIbBlxKyL))
+                    if not ORNOFuDuEEXGBOkTqU then vxQjdCUqtfBgvlgYhwP = false end
+                end
+                if vxQjdCUqtfBgvlgYhwP then mouse1click() end
+            end
+        end
+    end
+
+    for _, hHAgDJIMgpMYkdzdFsbx in pairs(gFcWFsppjHsulFOZysnRxUY:GetPlayers()) do
+        if hHAgDJIMgpMYkdzdFsbx == HskmddPGedkiKBVUXdI then continue end
+
+        local LbayjLoCTqFmmezlNNpTrgm     = hHAgDJIMgpMYkdzdFsbx.Character
+        local SnCMsCtQjiJPh      = LbayjLoCTqFmmezlNNpTrgm and LbayjLoCTqFmmezlNNpTrgm:FindFirstChild(LznbrowiqDGiGwfiAFQfMfZr)
+        local qJJqNshBDDKngnwkXseNTZrE = LbayjLoCTqFmmezlNNpTrgm and LbayjLoCTqFmmezlNNpTrgm:FindFirstChild(XLnOFyYfACjHMffkhWSXUkT)
+
+        if not LbayjLoCTqFmmezlNNpTrgm or not SnCMsCtQjiJPh or not qJJqNshBDDKngnwkXseNTZrE or qJJqNshBDDKngnwkXseNTZrE.Health <= 0 then
+            if dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx] then
+                dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx].boEAcXYKZkwUFBpkbSrgERj.Visible = false
+                dYwwGJQEfBfp[hHAgDJIMgpMYkdzdFsbx].uUGpEsicOuyKbWARGHE.Visible = false
+            end
+            continue
+        end
+
+        local ugPDarBfICwNN = true
+        local fzKBhlanijMWqucNj = 457
+        if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[uhWMbWMsSIOLHYADhnQeA]] and hHAgDJIMgpMYkdzdFsbx.Team ~= nil and HskmddPGedkiKBVUXdI.Team ~= nil and hHAgDJIMgpMYkdzdFsbx.Team == HskmddPGedkiKBVUXdI.Team and (fzKBhlanijMWqucNj * (fzKBhlanijMWqucNj + 1)) % 2 == 0 then
+            ugPDarBfICwNN = false
+        end
+        local RtWvRtXkCOviOtckMU = 516
+        if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[cpwdXqRmNmnMrqXQfQfLwWs]] and ugPDarBfICwNN and RtWvRtXkCOviOtckMU * RtWvRtXkCOviOtckMU >= 0 then
+            local ORNOFuDuEEXGBOkTqU = LbayjLoCTqFmmezlNNpTrgm:FindFirstChildOfClass(xvnjkRIbBlxKyL)
+                or (hHAgDJIMgpMYkdzdFsbx:FindFirstChild(HlezzwrsGfdtECgkp) and hHAgDJIMgpMYkdzdFsbx.Backpack:FindFirstChildOfClass(xvnjkRIbBlxKyL))
+            if not ORNOFuDuEEXGBOkTqU then ugPDarBfICwNN = false end
+        end
+
+        local QjXEUlnRgQbBxfIvViZyriO = 9667
+        if VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[GxsijxtdmrVSUJSND]] and ugPDarBfICwNN and math.floor(QjXEUlnRgQbBxfIvViZyriO) == math.floor(QjXEUlnRgQbBxfIvViZyriO) then
+            local XnvIdjCeTZBbearilVdA = VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[jFKJjykEVlBC]]
+            SnCMsCtQjiJPh.Size         = Vector3.new(XnvIdjCeTZBbearilVdA, XnvIdjCeTZBbearilVdA, XnvIdjCeTZBbearilVdA)
+            SnCMsCtQjiJPh.Color        = Color3.fromRGB(0, 0, 0)
+            SnCMsCtQjiJPh.Material     = Enum.Material.Neon
+            SnCMsCtQjiJPh.Transparency = 0.5
+            SnCMsCtQjiJPh.CanCollide   = false
+        else
+            SnCMsCtQjiJPh.Size         = azpAMERuKSEQliJjLH.HRP_DEFAULT_SIZE
+            SnCMsCtQjiJPh.Transparency = 1
+        end
+
+        local PoPaxBQVXbqspxAelCMpUdBw = LbayjLoCTqFmmezlNNpTrgm:FindFirstChild(azpAMERuKSEQliJjLH.ESP_TAG)
+        local gMmAuoeMfmUpiSdJzGDqh = -578
+        if ugPDarBfICwNN and math.abs(gMmAuoeMfmUpiSdJzGDqh) >= 0 then
+            local FPgRovzolkfuJ = 228
+            local XEgtVYQAUlilcKy = 416
+            if not PoPaxBQVXbqspxAelCMpUdBw and (FPgRovzolkfuJ + XEgtVYQAUlilcKy) - XEgtVYQAUlilcKy == FPgRovzolkfuJ then
+                PoPaxBQVXbqspxAelCMpUdBw = Instance.new(zAOkgMFnVzueXzjrvMRAl, LbayjLoCTqFmmezlNNpTrgm)
+                PoPaxBQVXbqspxAelCMpUdBw.Name             = azpAMERuKSEQliJjLH.ESP_TAG
+                PoPaxBQVXbqspxAelCMpUdBw.FillColor        = IDSLEexSZVrB.Accent
+                PoPaxBQVXbqspxAelCMpUdBw.OutlineColor     = IDSLEexSZVrB.AccentBright
+                PoPaxBQVXbqspxAelCMpUdBw.FillTransparency = azpAMERuKSEQliJjLH.ESP_FILL_ALPHA
+            end
+            PoPaxBQVXbqspxAelCMpUdBw.Enabled = VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[YnlJewrwACVosqtKyoYS]]
+        else
+            if PoPaxBQVXbqspxAelCMpUdBw then PoPaxBQVXbqspxAelCMpUdBw.Enabled = false end
+        end
+
+        local EJMadDhsFFyXwpKFKRLDP   = DZQomImydXrNhKhNJnFXU(hHAgDJIMgpMYkdzdFsbx)
+        local LXGhBcBVzfFHWnpgykd, yMdAsEtKxnNQjGHBu = TTiokQACGzDdHMoQNlhp:WorldToViewportPoint(SnCMsCtQjiJPh.Position)
+        local YGZiGhkpkYKYNjUVbaEOYS       = (SnCMsCtQjiJPh.Position - TTiokQACGzDdHMoQNlhp.CFrame.Position).Magnitude
+
+        EJMadDhsFFyXwpKFKRLDP.boEAcXYKZkwUFBpkbSrgERj.Visible = VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[YnlJewrwACVosqtKyoYS]] and ugPDarBfICwNN and yMdAsEtKxnNQjGHBu
+        local KLGUQrVtFKETsrAKMzX = 4407
+        if EJMadDhsFFyXwpKFKRLDP.boEAcXYKZkwUFBpkbSrgERj.Visible and math.floor(KLGUQrVtFKETsrAKMzX) == math.floor(KLGUQrVtFKETsrAKMzX) then
+            EJMadDhsFFyXwpKFKRLDP.boEAcXYKZkwUFBpkbSrgERj.Text     = string.format(DEcmVzKtkHXgQ, math.floor(YGZiGhkpkYKYNjUVbaEOYS))
+            EJMadDhsFFyXwpKFKRLDP.boEAcXYKZkwUFBpkbSrgERj.Position = Vector2.new(LXGhBcBVzfFHWnpgykd.X, LXGhBcBVzfFHWnpgykd.Y + 26)
+        end
+
+        EJMadDhsFFyXwpKFKRLDP.uUGpEsicOuyKbWARGHE.Visible = VJyDyPopTjUovHlxjVa[vrAlMcvLIlPgd[bWVlruMpQIGhwmudlswUpk]] and ugPDarBfICwNN and yMdAsEtKxnNQjGHBu
+        local sjTlEOKIohwPfEf = 554
+        if EJMadDhsFFyXwpKFKRLDP.uUGpEsicOuyKbWARGHE.Visible and (sjTlEOKIohwPfEf * (sjTlEOKIohwPfEf + 1)) % 2 == 0 then
+            EJMadDhsFFyXwpKFKRLDP.uUGpEsicOuyKbWARGHE.From = Vector2.new(TTiokQACGzDdHMoQNlhp.ViewportSize.X / 2, TTiokQACGzDdHMoQNlhp.ViewportSize.Y)
+            EJMadDhsFFyXwpKFKRLDP.uUGpEsicOuyKbWARGHE.To   = Vector2.new(LXGhBcBVzfFHWnpgykd.X, LXGhBcBVzfFHWnpgykd.Y)
+        end
+    end
+end)
